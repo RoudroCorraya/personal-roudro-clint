@@ -10,13 +10,13 @@ import { BiSolidCustomize } from 'react-icons/bi';
 
 const HomeWhatiDo = () => {
     return (
-        <div className='my-10'>
+        <div className='my-10 '>
             <div>
                 <h3 className='text-3xl font-semibold text-white text-center mb-14'>What I Do</h3>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 lg:mx-0 md:mx-0 sm:mx-auto'>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 '>
 
-                <div className="card bg-base-100 w-80 rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
+                <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
                     <span ><FaCode  className='text-3xl'/></span>
                         <h2 className="card-title">Web Design</h2>
@@ -26,7 +26,7 @@ const HomeWhatiDo = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-80 rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
+                <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
                     <span><SiVisualstudiocode className='text-3xl'/></span>
                         <h2 className="card-title">Web Development</h2>
@@ -36,7 +36,7 @@ const HomeWhatiDo = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 w-80 rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
+                <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
                     <span><BiSolidCustomize  className='text-3xl'/></span>
                         <h2 className="card-title">Customization</h2>

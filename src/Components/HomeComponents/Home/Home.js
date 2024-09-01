@@ -7,7 +7,7 @@ import HomeSkill from '../HomeSkill/HomeSkill';
 
 const Home = () => {
     return (
-        <div className='banner'>
+        <div className=''>
             <HomeBanner></HomeBanner>
             <HomeAbout></HomeAbout>
             <HomeWhatiDo></HomeWhatiDo>
