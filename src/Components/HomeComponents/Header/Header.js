@@ -24,23 +24,23 @@ const Header = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><Link>Item 1</Link></li>
-              <li><Link>Item 1</Link></li>
+              <li><Link className='hover:bg-accent'>Home</Link></li>
+              <li><Link className='hover:bg-accent' to='/services'>Services</Link></li>
               
-              <li><Link>Item 1</Link></li>
-              <li><Link>Item 1</Link></li>
+              <li><Link className='hover:bg-accent' to='/projects'>Project</Link></li>
+            <li><Link className='hover:bg-accent' to='/aboutme'>About me</Link></li>
             </ul>
           </div>
           <Link className="btn btn-ghost text-xl text-white">Milkon .</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white">
-            <li><Link>Home</Link></li>
-            <li><Link to='/services'>Services</Link></li>
-            <li><Link to='/projects'>Project</Link></li>
-            <li><Link to='/aboutme'>About me</Link></li>
+            <li><Link className='hover:bg-accent'>Home</Link></li>
+            <li><Link className='hover:bg-accent' to='/services'>Services</Link></li>
+            <li><Link className='hover:bg-accent' to='/projects'>Project</Link></li>
+            <li><Link className='hover:bg-accent' to='/aboutme'>About me</Link></li>
             
-            <li><Link to='/contact'>Contact</Link></li>
+            <li><Link className='hover:bg-accent' to='/contact'>Contact</Link></li>
           </ul>
         </div>
         <div className="navbar-end">

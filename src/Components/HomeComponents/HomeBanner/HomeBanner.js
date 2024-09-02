@@ -16,25 +16,26 @@ const HomeBanner = () => {
                 {/* <div className=''>
                 <span className='text-white py-1 px-2 bg-info w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div> */}
+                
             <div className=''>
                 <div className=' w-full lg:mx-0 md:mx-auto sm:mx-auto iconCOntrol'>
-                <span className='text-white  py-1 px-2 bg-info w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
+                <span className='text-white  py-1 px-2 bg-accent w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div>
-                <h1 className='text-6xl font-bold text-white lg:text-left md: text-center sm:text-center'>Rickson Corraya</h1>
+                <h1 className='text-6xl font-bold text-white lg:text-left md: text-center sm:text-center'>Roudro Corraya</h1>
                 <h3 className='text-3xl font-semibold text-white lg:text-left md: text-center sm:text-center'>Web Developer</h3>
                 <div className='py-5 lg:text-left md: text-center sm:text-center'>
                     <ul className='text-white '>
-                        <li><span className='lg:mr-8 md:mr-3 sm:mr-3 '><AiOutlineMail className='inline-block' /></span>rickson826@gmail.com</li>
+                        <li><span className='lg:mr-8 md:mr-3 sm:mr-3 '><AiOutlineMail className='inline-block' /></span>roudro826officail@gmail.com</li>
                         <li><span className='lg:mr-8 md:mr-3 sm:mr-3'><PiPhoneCallFill className='inline-block' /></span>01836200259</li>
                         <li><span className='lg:mr-8 md:mr-3 sm:mr-3'><FaLocationDot className='inline-block' /></span>Dhaka, Bangladesh</li>
                     </ul>
                 </div>
                 <div className=' w-full'>
                     <div className=' w-full iconCOntrol'>
-                        <Link className='mx-3 text-4xl text-white'><FaFacebook className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white'><AiFillInstagram className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white'><FaSquareXTwitter className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white'><FaLinkedin className='inline-block'/></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaFacebook className='inline-block'/></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><AiFillInstagram className='inline-block'/></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaSquareXTwitter className='inline-block'/></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaLinkedin className='inline-block'/></Link>
                     
                     </div>
                     
@@ -65,6 +66,7 @@ const HomeBanner = () => {
                     
                 </div>
             </div>
+            
         </div>
       
     );
