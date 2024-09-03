@@ -4,6 +4,7 @@ import HomeBanner from '../HomeBanner/HomeBanner';
 import HomeAbout from '../HomeAbout/HomeAbout';
 import HomeWhatiDo from '../HomeWhatiDo/HomeWhatiDo';
 import HomeSkill from '../HomeSkill/HomeSkill';
+import EducationDiploma from '../EducationDiploma/EducationDiploma';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <HomeAbout></HomeAbout>
             <HomeWhatiDo></HomeWhatiDo>
             <HomeSkill></HomeSkill>
+            <EducationDiploma></EducationDiploma>
         </div>
     );
 };
