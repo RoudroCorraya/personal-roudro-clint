@@ -7,12 +7,20 @@ import stJoseps from '../../../assets/image/educationImage/St.Josephs-School-Col
 import cit from '../../../assets/image/educationImage/creativeIT.webp';
 import pro from '../../../assets/image/educationImage/company_favicon.png';
 import radiance from '../../../assets/image/educationImage/radience-removebg-preview.png';
+import education from '../../../assets/image/educationImage/edufinal1-removebg-preview.png';
 
 const EducationDiploma = () => {
     return (
-        <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
-            <div>heading</div>
-            <div className="carousel carousel-vertical rounded-box h-96">
+        <div className='my-14'>
+            <div><h3 className='text-3xl font-semibold text-white text-center my-20'>Eduaction and Diplomas</h3></div>
+            <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 '>
+            <div className=' shadow-black shadow-xl drop-shadow-2xl rounded-2xl'>
+                
+               
+                    <img className=' w-full h-full' src={education} alt='eduaction.png'/>
+                
+            </div>
+            <div className="carousel carousel-vertical rounded-box h-96 mx-4">
                 <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
                 <div className='text-white'>
                         <h3 className='text-xl font-semibold text-white'>Notre Dame University Bangladesh</h3>
@@ -129,6 +137,7 @@ const EducationDiploma = () => {
                 </div>
                 
             </div>
+        </div>
         </div>
     );
 };
