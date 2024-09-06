@@ -4,9 +4,9 @@ import './EducationDiploma.css';
 import ndub from '../../../assets/image/educationImage/Notre-Dame-University-Bangladesh-Logo-Transparent.webp';
 import ndc from '../../../assets/image/educationImage/notre-dame-college-dhaka-logo-BE24BF8A6F-seeklogo.com.png';
 import stJoseps from '../../../assets/image/educationImage/St.Josephs-School-College-Bo-2.webp';
-import cit from '../../../assets/image/educationImage/creativeIT.webp';
+import cit from '../../../assets/image/educationImage/CITRoundLogo.png';
 import pro from '../../../assets/image/educationImage/company_favicon.png';
-import radiance from '../../../assets/image/educationImage/radience-removebg-preview.png';
+import radiance from '../../../assets/image/educationImage/radiance_roundLogo.png';
 import education from '../../../assets/image/educationImage/edufinal1-removebg-preview.png';
 
 const EducationDiploma = () => {
@@ -23,7 +23,7 @@ const EducationDiploma = () => {
             <div className="carousel carousel-vertical rounded-box h-96 mx-4">
                 <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Notre Dame University Bangladesh</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Notre Dame University Bangladesh</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> Bachelor of Business Administration</p>
 
@@ -44,7 +44,7 @@ const EducationDiploma = () => {
                     </div>
                 
                     <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Notre Dame College</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Notre Dame College</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> Bussines Studies</p>
 
@@ -57,7 +57,7 @@ const EducationDiploma = () => {
                 </div>
                 <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>St. Joseph's High School</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>St. Joseph's High School</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p>Bussines Studies</p>
 
@@ -76,7 +76,7 @@ const EducationDiploma = () => {
                 <img className='education w-full h-40 ' src={cit} alt='cit.jpg'/>
                 </div>
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Creative IT</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Creative IT</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> Web Design</p>
 
@@ -90,7 +90,7 @@ const EducationDiploma = () => {
                 <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
                 
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Creative IT</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Creative IT</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> Web Development</p>
 
@@ -108,7 +108,7 @@ const EducationDiploma = () => {
                 <img className='education w-full h-40 ' src={pro} alt='pro.jpg'/>
                 </div>
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Programming Hero</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Programming Hero</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> Interactive Web Development</p>
 
@@ -122,7 +122,7 @@ const EducationDiploma = () => {
                 <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
                 
                 <div className='text-white'>
-                        <h3 className='text-xl font-semibold text-white'>Radiance Bangladesh</h3>
+                        <h3 className='text-xl font-semibold text-white imagecontrol'>Radiance Bangladesh</h3>
                         <IoPinOutline className='text-4xl text-white education'/>
                         <p> English Proficiency</p>
 

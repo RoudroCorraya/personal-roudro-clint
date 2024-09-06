@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px){
+    .pricespace{
+     margin-bottom: 20px;
+     margin-left: auto;
+     margin-right: auto;
+    }
+    .pricecenter{
+       text-align: center !important;
+
+    }
+    
+}

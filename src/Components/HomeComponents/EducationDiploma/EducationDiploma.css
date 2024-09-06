@@ -6,10 +6,15 @@
         width: 100%;
         margin-left: 0 auto;
         
+        
     }
     .setimage{
         margin: 0 50%;
         transform: translateX(-50%);
     }
+    .imagecontrol{
+        margin-top: 30px !important;
+    }
+
     
 }

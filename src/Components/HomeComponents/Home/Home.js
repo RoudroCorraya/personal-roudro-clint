@@ -5,6 +5,7 @@ import HomeAbout from '../HomeAbout/HomeAbout';
 import HomeWhatiDo from '../HomeWhatiDo/HomeWhatiDo';
 import HomeSkill from '../HomeSkill/HomeSkill';
 import EducationDiploma from '../EducationDiploma/EducationDiploma';
+import Pricing from '../Pricing/Pricing';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <HomeWhatiDo></HomeWhatiDo>
             <HomeSkill></HomeSkill>
             <EducationDiploma></EducationDiploma>
+            <Pricing></Pricing>
         </div>
     );
 };
