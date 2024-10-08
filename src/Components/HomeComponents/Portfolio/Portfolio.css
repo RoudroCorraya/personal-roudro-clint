@@ -1,0 +1,38 @@
+/* Container for the image and rotating circle */
+.circle-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* The image inside the container */
+  .image {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    display: block;
+  }
+  
+  /* The rotating circle */
+  .rotating-circle {
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    width: 250px; /* Larger than the image to surround it */
+    height: 250px;
+    border: 10px dotted aqua; /* Circle border */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear infinite; /* Animation with rotation */
+  }
+  
+  /* Keyframes for rotation animation */
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
