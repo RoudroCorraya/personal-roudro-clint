@@ -31,7 +31,7 @@ const Header = () => {
             <li><Link className='hover:bg-accent' to='/aboutme'>About me</Link></li>
             </ul>
           </div>
-          <Link className="btn btn-ghost text-xl text-white">Milkon .</Link>
+          <Link className="btn btn-ghost text-xl text-white">RisCO .</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white">

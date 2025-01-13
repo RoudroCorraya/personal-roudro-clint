@@ -2,13 +2,36 @@ import React from 'react';
 
 const HomePortfolio = () => {
     return (
-        <div className='w-full mx-auto bg-red-300 h-32'>
+        <div className='  text-center'>
+            <div role="tablist" className="tabs tabs-bordered">
 
-            
+                <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Tab 1" />
 
+                <div role="tabpanel" className="  tab-content p-10">
+                    content 1
+                </div>
+
+
+                <input
+                    type="radio"
+                    name="my_tabs_1"
+                    role="tab"
+                    className="tab "
+                    aria-label="Tab 2"
+                    defaultChecked />
+
+                <div role="tabpanel" className="tab-content  p-10">Tab content 2</div>
+
+
+                <input type="radio" name="my_tabs_1" role="tab" className="tab " aria-label="Tab 3" />
+
+                <div role="tabpanel" className="tab-content p-10">Tab content 3</div>
             </div>
-        
+
+
+        </div>
+
     );
 };
 
-            export default HomePortfolio;
+export default HomePortfolio;

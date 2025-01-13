@@ -9,6 +9,7 @@ import Pricing from '../Pricing/Pricing';
 import Portfolio from '../Portfolio/Portfolio';
 import HomeContact from '../HomeContact/HomeContact';
 import HomePortfolio from '../HomePortfolio/HomePortfolio';
+import HomeBlog from '../HomeBlog/HomeBlog';
 
 const Home = () => {
     return (
@@ -18,9 +19,10 @@ const Home = () => {
             <HomeWhatiDo></HomeWhatiDo>
             <HomeSkill></HomeSkill>
             <EducationDiploma></EducationDiploma>
-            <Portfolio></Portfolio>
+            {/* <Portfolio></Portfolio> */}
             <Pricing></Pricing>
-            <HomePortfolio></HomePortfolio>
+            <HomeBlog></HomeBlog>
+            {/* <HomePortfolio></HomePortfolio> */}
             <HomeContact></HomeContact>
         </div>
     );
