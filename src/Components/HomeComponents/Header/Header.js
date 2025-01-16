@@ -44,7 +44,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn text-white bg-accent">Let's Talk</Link>
+          <Link to='/signup' className="btn text-white bg-accent">Let's Talk</Link>
         </div>
       </div>
         
