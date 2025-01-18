@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import loginImage from '../../../src/assets/image/logIn/login3-removebg-preview.png';
 
-const componentName = () => {
+import { AuthContext, authContext } from '../../Provider/AuthProvider';
+// import { createContext } from 'react';
 
+
+const SignUp = () => {
+    
+   const {createUser} = useContext(AuthContext);
     const handleSignUp = event =>{
+
+        
 
         event.preventDefault();
         const form = event.target;
@@ -12,6 +19,16 @@ const componentName = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password);
+
+
+        createUser(email, password)
+        .then( result => {
+            const user = result.user;
+            console.log('userfound', user);
+        })
+        .then(error => console.log(error)
+        )
+        
     }
     return (
 
@@ -54,7 +71,7 @@ const componentName = () => {
             </div>
         </div>
 
-    )
-}
+    );
+};
 
-export default componentName
+export default SignUp;
