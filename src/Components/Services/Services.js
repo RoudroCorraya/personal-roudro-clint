@@ -59,7 +59,7 @@ const Services = () => {
 
 
     return (
-        <div>
+        <div className='my-20'>
             <h3 className='text-3xl font-semibold text-white text-center'>Services</h3>
 
 
@@ -93,146 +93,177 @@ const Services = () => {
                 </div>
             </div>
 
+            <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 flip-card'>
+                <div className='w-full min-h-64'>
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-            <div className='w-full min-h-96 grid grid-cols-3 my-20'>
-                <div className="card flip-card  w-80 my-16" >
-
-                    <motion.div onClick={handleFliped}
-                        className='flip-card-inner '
-                        initial={false}
-                        animate={{ rotateY: isfliped ? 180 : 360 }}
-                        transition={{ duration: 0.6, animationDirection: "normal" }}
-                        onAnimationComplete={() => setIsAnimate(false)}
-                    >
-                        <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                        <motion.div 
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
                 </div>
-                <div className="card flip-card  w-80 my-16" >
+                <div className='w-full min-h-64' >
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-                    <motion.div onClick={handleFliped}
-                        className='flip-card-inner '
-                        initial={false}
-                        animate={{ rotateY: isfliped ? 180 : 360 }}
-                        transition={{ duration: 0.6, animationDirection: "normal" }}
-                        onAnimationComplete={() => setIsAnimate(false)}
-                    >
-                        <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                        <motion.div
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
                 </div>
-                <div className="card flip-card  w-80 my-16" >
+                <div className='w-full min-h-64' >
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-                    <motion.div onClick={handleFliped}
-                        className='flip-card-inner '
-                        initial={false}
-                        animate={{ rotateY: isfliped ? 180 : 360 }}
-                        transition={{ duration: 0.6, animationDirection: "normal" }}
-                        onAnimationComplete={() => setIsAnimate(false)}
-                    >
-                        <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                        <motion.div
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
                 </div>
-                <div className="card flip-card  w-80 my-16" >
+                <div className='w-full min-h-64' >
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-                    <motion.div onClick={handleFliped}
-                        className='flip-card-inner '
-                        initial={false}
-                        animate={{ rotateY: isfliped ? 180 : 360 }}
-                        transition={{ duration: 0.6, animationDirection: "normal" }}
-                        onAnimationComplete={() => setIsAnimate(false)}
-                    >
-                        <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                        <motion.div
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
                 </div>
-                <div className="card flip-card  w-80 my-16" >
+                <div className='w-full min-h-64' >
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-                    <motion.div onClick={handleFliped}
-                        className='flip-card-inner '
-                        initial={false}
-                        animate={{ rotateY: isfliped ? 180 : 360 }}
-                        transition={{ duration: 0.6, animationDirection: "normal" }}
-                        onAnimationComplete={() => setIsAnimate(false)}
-                    >
-                        <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                        <motion.div
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                        <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-accent">Buy Now</button>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
                 </div>
-                
+                <div className='w-full min-h-64' >
+                    <div className="card  w-80 my-24" onClick={handleFliped}>
 
-                
-                
-               
-               
-                
+                        <motion.div
+                            className='flip-card-inner '
+                            initial={false}
+                            animate={{ rotateY: isfliped ? 180 : 360 }}
+                            transition={{ duration: 0.6, animationDirection: "normal" }}
+                            onAnimationComplete={() => setIsAnimate(false)}
+                        >
+                            <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card title!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
+                            </div>
+                            <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
+                                <h2 className="card-title">Card back!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-accent">Buy Now</button>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                    </div>
+                </div>
             </div>
+
         </div>
     );
 };
