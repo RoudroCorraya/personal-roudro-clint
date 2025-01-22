@@ -1,0 +1,9 @@
+.modyif{
+    color: aqua;
+}
+.modyif::after{
+    color: aqua;
+}
+.modyif::before{
+    color: aqua;
+}
