@@ -4,9 +4,10 @@ import websideng from '../../../assets/image/whatIDo/webdesign.png';
 import bugfixing from '../../../assets/image/whatIDo/bugfixing.png';
 import responsive from '../../../assets/image/whatIDo/ai-generated-8876491_1280.png';
 import { Link } from 'react-router-dom';
-import { FaCode } from 'react-icons/fa';
-import { SiVisualstudiocode } from 'react-icons/si';
+import { FaCode } from "react-icons/fa";
+
 import { BiSolidCustomize } from 'react-icons/bi';
+import { VscVscode } from 'react-icons/vsc';
 
 const HomeWhatiDo = () => {
     return (
@@ -28,7 +29,7 @@ const HomeWhatiDo = () => {
                 </div>
                 <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
-                    <span><SiVisualstudiocode className='text-3xl'/></span>
+                    <span><VscVscode className='text-3xl'/></span>
                         <h2 className="card-title">Web Development</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
