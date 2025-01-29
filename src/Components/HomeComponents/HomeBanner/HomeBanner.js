@@ -1,8 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import banner1 from '../../../assets/image/bannerImage/banner1.jpg';
 import banner2 from '../../../assets/image/bannerImage/banner2.png';
 import banner3 from '../../../assets/image/bannerImage/me.jpg';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
 import { AiFillInstagram, AiOutlineMail } from "react-icons/ai";
 import { PiPhoneCallFill } from 'react-icons/pi';
 import { FaFacebookF, FaLinkedinIn, FaLocationDot, FaSquareTwitter, FaSquareXTwitter, FaXTwitter } from 'react-icons/fa6';
@@ -10,6 +11,40 @@ import { FaFacebook, FaInstagram, FaInstagramSquare, FaLinkedin, FaXingSquare } 
 import './HomeBanner.css';
 
 const HomeBanner = () => {
+    // ======================================
+    const outerDivRef = useRef(null);
+  
+  const innerDivRef = useRef(null);
+
+  useEffect(() => {
+    const rotateOuterDiv = () => {
+      const outerDiv = outerDivRef.current;
+   
+      const innerDiv = innerDivRef.current;
+
+      let outerDegree = 0;
+    
+      let innerDegree = 0;
+
+      setInterval(() => {
+        outerDegree += 1;  // Outer div rotates 1 degree per interval
+       
+        innerDegree -= 1;  // Inner div rotates 1 degree in opposite direction
+
+        outerDiv.style.transform = `rotate(${outerDegree}deg)`;
+       
+        innerDiv.style.transform = `rotate(${innerDegree}deg)`;
+      }, 10); // Adjust the interval speed for smoother animation
+    };
+
+    rotateOuterDiv(); // Start the rotation animation
+
+    return () => {
+      // Clean up on unmount
+      clearInterval();
+    };
+  }, []);
+    // ======================================
     return (
         
             <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 py-14'>
@@ -63,7 +98,14 @@ const HomeBanner = () => {
             </div>
             <div className='m-auto'>
                 <div className="image">
-                    
+                     {/* ============================================= */}
+        <div className="outer-div" ref={outerDivRef}>
+        
+      
+      <div className="inner-div" ref={innerDivRef}></div>
+    </div>
+        
+        {/* ============================================= */}
                 </div>
             </div>
             
