@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Aboutme.css';
 import { FaDownload } from 'react-icons/fa';
@@ -6,8 +6,37 @@ import { FaDownload } from 'react-icons/fa';
 
 
 const Aboutme = () => {
+    // =====================================================
+    // State to store mouse position
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Event listener to track mouse movement
+  const handleMouseMove = (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    setMousePosition({ x, y });
+  };
+
+  // Add event listener when component mounts and clean up when it unmounts
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  // Calculate parallax effect based on mouse position
+  const parallaxStyle = {
+    transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.05}px, ${(mousePosition.y - window.innerHeight / 2) * 0.05}px)`
+  };
+    // =====================================================
     return (
-        <div className='flex justify-between flex-wrap mt-40 mb-3'>
+        <div style={{ position: "relative" }}>
+            <div style={{
+          width: "100%",
+          height: "100%", transition: "transform 0.1s ease-out",
+          ...parallaxStyle}} className='flex justify-between flex-wrap mt-40 mb-3'>
             <div className=' w-52 my-3 flex justify-end border-8 border-white'>
                 <div className='w-64 h-56 overbg bg-linear-to-r from-black to-cyan-400 translate-x-1/4 -translate-y-1/2'>
 
@@ -46,6 +75,7 @@ const Aboutme = () => {
 
 
 
+        </div>
         </div>
     );
 };

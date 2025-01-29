@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Home.css';
 import HomeBanner from '../HomeBanner/HomeBanner';
 import HomeAbout from '../HomeAbout/HomeAbout';
@@ -11,19 +12,38 @@ import HomeContact from '../HomeContact/HomeContact';
 import HomePortfolio from '../HomePortfolio/HomePortfolio';
 import HomeBlog from '../HomeBlog/HomeBlog';
 
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+
 const Home = () => {
     return (
         <div className=''>
-            <HomeBanner></HomeBanner>
+          
+                <HomeBanner></HomeBanner>
+         
+           
             <HomeAbout></HomeAbout>
+          
+
+
+            
             <HomeWhatiDo></HomeWhatiDo>
             <HomeSkill></HomeSkill>
             <EducationDiploma></EducationDiploma>
-            {/* <Portfolio></Portfolio> */}
             <Pricing></Pricing>
             <HomeBlog></HomeBlog>
-            {/* <HomePortfolio></HomePortfolio> */}
             <HomeContact></HomeContact>
+           
+
+
+
+
+
+            {/* <Portfolio></Portfolio> */}
+
+
+            {/* <HomePortfolio></HomePortfolio> */}
+
+
         </div>
     );
 };
