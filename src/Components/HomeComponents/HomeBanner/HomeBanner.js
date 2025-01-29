@@ -13,48 +13,42 @@ import './HomeBanner.css';
 const HomeBanner = () => {
     // ======================================
     const outerDivRef = useRef(null);
-  
-  const innerDivRef = useRef(null);
 
-  useEffect(() => {
-    const rotateOuterDiv = () => {
-      const outerDiv = outerDivRef.current;
-   
-      const innerDiv = innerDivRef.current;
+    const innerDivRef = useRef(null);
 
-      let outerDegree = 0;
-    
-      let innerDegree = 0;
+    useEffect(() => {
+        let outerDegree = 0;
 
-      setInterval(() => {
-        outerDegree += 1;  // Outer div rotates 1 degree per interval
-       
-        innerDegree -= 1;  // Inner div rotates 1 degree in opposite direction
+        let innerDegree = 0;
+        const rotationSpeed = 0.5;
+        const intervalTime = 10;
+        const rotateOuterDiv = () => {
+            const outerDiv = outerDivRef.current;
 
-        outerDiv.style.transform = `rotate(${outerDegree}deg)`;
-       
-        innerDiv.style.transform = `rotate(${innerDegree}deg)`;
-      }, 10); // Adjust the interval speed for smoother animation
-    };
+            const innerDiv = innerDivRef.current;
+            outerDegree += rotationSpeed;   // Outer div rotates by the defined speed
+            innerDegree -= rotationSpeed;   // Inner div rotates in the opposite direction
 
-    rotateOuterDiv(); // Start the rotation animation
+            outerDiv.style.transform = `rotate(${outerDegree}deg)`;
+            innerDiv.style.transform = `rotate(${innerDegree}deg)`;
+        };
 
-    return () => {
-      // Clean up on unmount
-      clearInterval();
-    };
-  }, []);
+
+        const interval = setInterval(rotateOuterDiv, intervalTime);
+        return () => clearInterval(interval);
+
+    }, []);
     // ======================================
     return (
-        
-            <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 py-14'>
-                {/* <div className=''>
+
+        <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 py-14'>
+            {/* <div className=''>
                 <span className='text-white py-1 px-2 bg-info w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div> */}
-                
+
             <div className=''>
                 <div className=' w-full lg:mx-0 md:mx-auto sm:mx-auto iconCOntrol'>
-                <span className='text-white  py-1 px-2 bg-accent w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
+                    <span className='text-white  py-1 px-2 bg-accent w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div>
                 <h1 className='text-6xl font-bold text-white lg:text-left md: text-center sm:text-center'>Roudro Corraya</h1>
                 <h3 className='text-3xl font-semibold text-white lg:text-left md: text-center sm:text-center'>Web Developer</h3>
@@ -67,18 +61,18 @@ const HomeBanner = () => {
                 </div>
                 <div className=' w-full'>
                     <div className=' w-full iconCOntrol'>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaFacebook className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><AiFillInstagram className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaSquareXTwitter className='inline-block'/></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaLinkedin className='inline-block'/></Link>
-                    
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaFacebook className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><AiFillInstagram className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaSquareXTwitter className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaLinkedin className='inline-block' /></Link>
+
                     </div>
-                    
-                    
-                    
-                    
+
+
+
+
                 </div>
-                
+
                 {/* <div className='w-full flex lg:justify-start md:justify-center sm:justify-center '>
                     <Link className='mr-3'><button className="btn btn-circle btn-outline">
                         <FaFacebookF className='inline-block text-white' />
@@ -98,19 +92,17 @@ const HomeBanner = () => {
             </div>
             <div className='m-auto'>
                 <div className="image">
-                     {/* ============================================= */}
-        <div className="outer-div" ref={outerDivRef}>
-        
-      
-      <div className="inner-div" ref={innerDivRef}></div>
-    </div>
-        
-        {/* ============================================= */}
+                    {/* ============================================= */}
+                    <div className="outer-div" ref={outerDivRef} style={{ transition: "transform 0.4s ease" }}>
+                        <div className="inner-div" ref={innerDivRef} style={{ transition: "transform 0.4s ease" }}></div>
+                    </div>
+
+                    {/* ============================================= */}
                 </div>
             </div>
-            
+
         </div>
-      
+
     );
 };
 

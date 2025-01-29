@@ -1,0 +1,50 @@
+/* ============================= */
+.outer-div2 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid aqua;
+    background: url(../../assets/image/logIn/bannerround1.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -20%;
+    margin-left: -20%;
+    border-radius: 50%;
+    opacity: 1;
+    /*Tomakeitcircular*/animation: rotateOuter 100s linear infinite;
+     /* Outer div rotation */  
+    -webkit-animation: rotateOuter 100s linear infinite;
+}
+  
+  .inner-div2 {
+    width: 185px;
+    height: 185px;
+    background-color: transparent;
+    border-radius: 50%;
+    /*Innercircle*/position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    animation: rotateInner 100s linear infinite;
+    /*Innercirclerotation*/-webkit-animation: rotateInner 100s linear infinite;
+    -webkit-animation: rotateInner 100s linear infinite;
+}
+  
+  /* Optional: Add keyframe animation for outer div */
+  @keyframes rotateOuter {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Optional: Add keyframe animation for inner circle */
+  @keyframes rotateInner {
+    100% {
+      transform: rotate(-360deg); /* Inner div rotates in the opposite direction */
+    }
+  }
+  
+/* ============================= */
+

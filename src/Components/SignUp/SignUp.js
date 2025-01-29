@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import loginImage from '../../../src/assets/image/logIn/login3-removebg-preview.png';
+import loginImage from '../../../src/assets/image/logIn/logIn10-removebg-preview.png';
+import loginImage2 from '../../../src/assets/image/logIn/login1-removebg-preview.png';
+import loginImage3 from '../../../src/assets/image/logIn/login3-removebg-preview.png';
 
 import { AuthContext, authContext } from '../../Provider/AuthProvider';
 // import { createContext } from 'react';
+import './SignUp.css';
 
 
 const SignUp = () => {
@@ -30,13 +33,44 @@ const SignUp = () => {
         )
         
     }
+     // =====================================================
+    // State to store mouse position
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Event listener to track mouse movement
+  const handleMouseMove = (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    setMousePosition({ x, y });
+  };
+
+  // Add event listener when component mounts and clean up when it unmounts
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  // Calculate parallax effect based on mouse position
+  const parallaxStyle = {
+    transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.05}px, ${(mousePosition.y - window.innerHeight / 2) * 0.05}px)`
+  };
+    // =====================================================
     return (
 
-        <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row">
-                <div className="text-center lg:text-left">
+        <div className="hero bg-base-200 min-h-screen " >
+            <div className="hero-content flex-col lg:flex-row backSignUp" >
+                <div className=" w-1/2
+                 text-center  lg:text-left" style={{ position: "relative" }}>
                     
-                    <img className='' src={loginImage} alt=''></img>
+                    <img style={{
+          width: "100%",
+          height: "100%", transition: "transform 0.1s ease-out",
+          ...parallaxStyle}} className='signUpImage' src={loginImage} alt=''></img>
+                   
+                    
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <h1 className="text-3xl font-bold text-center">Sign Up!</h1>
