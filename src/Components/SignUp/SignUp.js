@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import loginImage from '../../../src/assets/image/logIn/logIn10-removebg-preview.png';
+import loginImage from '../../../src/assets/image/logIn/login13.png';
 import loginImage2 from '../../../src/assets/image/logIn/login1-removebg-preview.png';
 import loginImage3 from '../../../src/assets/image/logIn/login3-removebg-preview.png';
 
@@ -62,7 +62,7 @@ const SignUp = () => {
 
         <div className="hero bg-base-200 min-h-screen " >
             <div className="hero-content flex-col lg:flex-row backSignUp" >
-                <div className=" w-1/2
+                <div className=" w-1/3
                  text-center  lg:text-left" style={{ position: "relative" }}>
                     
                     <img style={{

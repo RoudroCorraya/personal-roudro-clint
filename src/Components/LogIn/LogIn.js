@@ -1,51 +1,49 @@
-import React, { useEffect, useRef } from 'react';
-// import loginImage from '../../../src/assets/image/logIn/bannerround1.png';
+import React, { useEffect, useRef, useState } from 'react';
+import loginImage from '../../../src/assets/image/logIn/logIn10-removebg-preview.png';
 
 import { Link } from 'react-router-dom';
 import './LogIn.css';
 
 const LogIn = () => {
-     // ======================================
-        const outerDiv2Ref = useRef(null);
+     // =====================================================
+        // State to store mouse position
+      const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     
-        const innerDiv2Ref = useRef(null);
+      // Event listener to track mouse movement
+      const handleMouseMove = (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        setMousePosition({ x, y });
+      };
     
-        useEffect(() => {
-            let outerDegree = 0;
+      // Add event listener when component mounts and clean up when it unmounts
+      useEffect(() => {
+        window.addEventListener("mousemove", handleMouseMove);
     
-            let innerDegree = 0;
-            const rotationSpeed = 0.5;
-            const intervalTime = 10;
-            const rotateouterDiv2 = () => {
-                const outerDiv2 = outerDiv2Ref.current;
+        return () => {
+          window.removeEventListener("mousemove", handleMouseMove);
+        };
+      }, []);
     
-                const innerDiv2 = innerDiv2Ref.current;
-                outerDegree += rotationSpeed;   // Outer div rotates by the defined speed
-                innerDegree -= rotationSpeed;   // Inner div rotates in the opposite direction
-    
-                outerDiv2.style.transform = `rotate(${outerDegree}deg)`;
-                innerDiv2.style.transform = `rotate(${innerDegree}deg)`;
-            };
-    
-    
-            const interval = setInterval(rotateouterDiv2, intervalTime);
-            return () => clearInterval(interval);
-    
-        }, []);
-        // ======================================
+      // Calculate parallax effect based on mouse position
+      const parallaxStyle = {
+        transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.05}px, ${(mousePosition.y - window.innerHeight / 2) * 0.05}px)`
+      };
+        // =====================================================
+     
     return (
-        <div className="hero bg-base-200 min-h-screen text-white">
-        <div className="hero-content flex-col lg:flex-row">
-            <div className="text-center lg:text-left">
-                
-                {/* <img className='' src={loginImage} alt=''></img> */}
-                {/* ============================================= */}
-                <div className="outer-div2" ref={outerDiv2Ref} style={{ transition: "transform 0.4s ease" }}>
-                        <div className="inner-div2" ref={innerDiv2Ref} style={{ transition: "transform 0.4s ease" }}></div>
-                    </div>
-
-                    {/* ============================================= */}
-            </div>
+        <div className="hero bg-base-200 min-h-screen text-white logInBgSetUp rounded-3xl">
+        <div className="hero-content flex-col lg:flex-row overlayLogIn">
+        <div className=" w-1/2
+                 text-center  lg:text-left" style={{ position: "relative" }}>
+                    
+                    <img style={{
+          width: "100%",
+          height: "100%", transition: "transform 0.1s ease-out",
+          ...parallaxStyle}} className='signUpImage' src={loginImage} alt=''></img>
+                   
+                    
+                </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <h1 className="text-3xl font-bold text-center">LogIn!</h1>
                 <form className="card-body">

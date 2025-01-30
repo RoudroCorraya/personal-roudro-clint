@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSpring, animated } from '@react-spring/web';
 import ReactCardFlip from 'react-card-flip';
-import service1 from '../../../src/assets/image/services/service1.jpg';
-import service2 from '../../../src/assets/image/services/service2.jpg';
-import service3 from '../../../src/assets/image/services/service3.jpg';
-import service4 from '../../../src/assets/image/services/service4.jpg';
-import service5 from '../../../src/assets/image/services/service5.jpg';
+import service1 from '../../../src/assets/image/services/ser11.jpg';
+import service2 from '../../../src/assets/image/services/ser9.webp';
+import service3 from '../../../src/assets/image/services/ser12.jpeg';
+import service4 from '../../../src/assets/image/services/service7.webp';
+import service5 from '../../../src/assets/image/services/ser8.jpg';
 import './Service.css';
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 
 
 const Services = () => {
@@ -60,7 +61,7 @@ const Services = () => {
 
     return (
         <div className='my-20'>
-            <h3 className='text-3xl font-semibold text-white text-center'>Services</h3>
+            <h3 className='text-3xl font-semibold text-white text-center'>Our Work Environment</h3>
 
 
             <div className="flex items-center flex-col justify-center">
@@ -74,26 +75,30 @@ const Services = () => {
                         animate={position[positionIndexes[index]]}
                         variants={imageVariants}
                         transition={{ duration: 0.5 }}
-                        style={{ width: "40%", position: "absolute" }}
+                        style={{ width: "30%", position: "absolute" }}
+                    
                     />
+                    
                 ))}
+                
                 <div className="flex flex-row gap-3">
                     <button
                         className="text-white mt-[400px] bg-accent rounded-md py-2 px-4"
                         onClick={handleBack}
                     >
-                        back
+                        <FaChevronCircleLeft className='text-3xl' />
                     </button>
                     <button
                         className="text-white mt-[400px] bg-accent rounded-md py-2 px-4"
                         onClick={handleNext}
                     >
-                        next
+                        <FaChevronCircleRight className='text-3xl'/>
                     </button>
                 </div>
             </div>
-
+            <h3 className='text-3xl font-semibold text-white text-center mt-10'>Services We Offer !</h3>
             <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 flip-card'>
+            
                 <div className='w-full min-h-64'>
                     <div className="card  w-80 my-24" onClick={handleFliped}>
 
