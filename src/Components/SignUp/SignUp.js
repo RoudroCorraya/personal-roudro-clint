@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { json, Link } from 'react-router-dom'
 import loginImage from '../../../src/assets/image/logIn/login13.png';
 import loginImage2 from '../../../src/assets/image/logIn/login1-removebg-preview.png';
 import loginImage3 from '../../../src/assets/image/logIn/login3-removebg-preview.png';
@@ -12,8 +12,10 @@ import './SignUp.css';
 const SignUp = () => {
     
    const {createUser} = useContext(AuthContext);
+   
+   
     const handleSignUp = event =>{
-
+         
         
 
         event.preventDefault();
@@ -21,12 +23,26 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        const user = {name, email, password}
+        console.log('signUp user data ', user);
+
+       
 
 
         createUser(email, password)
+        fetch('http://localhost:5000/users', {
+            method : "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body : JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then( data =>{
+            console.log(data);
+        })
         .then( result => {
-            const user = result.user;
+            const user = result?.user;
             console.log('userfound', user);
         })
         .then(error => console.log(error)
