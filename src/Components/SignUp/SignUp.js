@@ -1,78 +1,129 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { json, Link } from 'react-router-dom'
+import { json, Link, useNavigate, useNavigation } from 'react-router-dom'
 import loginImage from '../../../src/assets/image/logIn/login13.png';
 import loginImage2 from '../../../src/assets/image/logIn/login1-removebg-preview.png';
 import loginImage3 from '../../../src/assets/image/logIn/login3-removebg-preview.png';
-
+import Swal from 'sweetalert2';
 import { AuthContext, authContext } from '../../Provider/AuthProvider';
 // import { createContext } from 'react';
 import './SignUp.css';
 
 
 const SignUp = () => {
-    
-   const {createUser} = useContext(AuthContext);
-   
-   
-    const handleSignUp = event =>{
-         
-        
+
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const Swal = require('sweetalert2')
+    const handleSignUp = event => {
+
+
 
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const user = {name, email, password}
+        const user = { name, email, password }
         console.log('signUp user data ', user);
 
-       
 
 
-        createUser(email, password)
-        fetch('http://localhost:5000/users', {
-            method : "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body : JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then( data =>{
-            console.log(data);
-        })
-        .then( result => {
-            const user = result?.user;
-            console.log('userfound', user);
-        })
-        .then(error => console.log(error)
-        )
-        
+
+        createUser(email, password, name)
+
+            .then(result => {
+                const user = result?.user;
+                fetch('http://localhost:5000/users', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: name, // Ensure inputName has the value
+                        user: user
+                    }),
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+
+                    .catch(error => {
+                        console.error(error);
+                    })
+                //    .catch(error => {
+                //     console.error(error);
+                //    })
+                form.reset();
+                Swal.fire({
+                    title: 'SignUp Successfully',
+
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                navigate('/')
+            })
+
+
     }
-     // =====================================================
+    // const handleSignUp = async (event) => {
+    //     event.preventDefault();
+
+    //     const form = event.target;
+    //     const name = form.name.value;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+    //     const user = { name, email, password };
+
+    //     console.log('signUp user data ', user);
+
+    //     try {
+    //         // Create user in authentication system
+    //         const createdUser = await createUser(email, password);
+
+    //         // Make API call to save user in the database
+    //         const response = await fetch("http://localhost:5000/users", {
+    //             method: "POST",  // Change to "PUT" if updating
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify(createdUser)
+    //         });
+
+    //         // if (!response.ok) {
+    //         //     throw new Error(`HTTP error! Status: ${response.status}`);
+    //         // }
+
+    //         const data = await response.json();
+    //         console.log("Server Response:", data);
+    //     } catch (error) {
+    //         console.error("Error:", error);
+    //     }
+    // };
+    // =====================================================
     // State to store mouse position
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Event listener to track mouse movement
-  const handleMouseMove = (event) => {
-    const x = event.clientX;
-    const y = event.clientY;
-    setMousePosition({ x, y });
-  };
-
-  // Add event listener when component mounts and clean up when it unmounts
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+    // Event listener to track mouse movement
+    const handleMouseMove = (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        setMousePosition({ x, y });
     };
-  }, []);
 
-  // Calculate parallax effect based on mouse position
-  const parallaxStyle = {
-    transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.05}px, ${(mousePosition.y - window.innerHeight / 2) * 0.05}px)`
-  };
+    // Add event listener when component mounts and clean up when it unmounts
+    useEffect(() => {
+        window.addEventListener("mousemove", handleMouseMove);
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
+
+    // Calculate parallax effect based on mouse position
+    const parallaxStyle = {
+        transform: `translate(${(mousePosition.x - window.innerWidth / 2) * 0.05}px, ${(mousePosition.y - window.innerHeight / 2) * 0.05}px)`
+    };
     // =====================================================
     return (
 
@@ -80,16 +131,17 @@ const SignUp = () => {
             <div className="hero-content flex-col lg:flex-row backSignUp" >
                 <div className=" w-1/3
                  text-center  lg:text-left" style={{ position: "relative" }}>
-                    
+
                     <img style={{
-          width: "100%",
-          height: "100%", transition: "transform 0.1s ease-out",
-          ...parallaxStyle}} className='signUpImage' src={loginImage} alt=''></img>
-                   
-                    
+                        width: "100%",
+                        height: "100%", transition: "transform 0.1s ease-out",
+                        ...parallaxStyle
+                    }} className='signUpImage' src={loginImage} alt=''></img>
+
+
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <h1 className="text-3xl font-bold text-center">Sign Up!</h1>
+                    <h1 className="text-3xl font-bold text-center">Sign Up!</h1>
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">

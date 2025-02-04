@@ -1,13 +1,41 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import loginImage from '../../../src/assets/image/logIn/logIn10-removebg-preview.png';
-
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { Link, useNavigate } from 'react-router-dom';
 import './LogIn.css';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const LogIn = () => {
+
+    const {signIn} = useContext(AuthContext);
+     const navigate = useNavigate();
+        const Swal = require('sweetalert2')
      // =====================================================
         // State to store mouse position
       const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+      const handleLogin = event =>{
+        const form = event.target;
+      
+        const email = form.email.value;
+        const password = form.password.value;
+       
+       
+        signIn(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            
+        })
+        form.reset();
+            Swal.fire({
+                title: 'LoIn Successfully',
+
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+            navigate('/')
+       
+      }
     
       // Event listener to track mouse movement
       const handleMouseMove = (event) => {
@@ -46,18 +74,18 @@ const LogIn = () => {
                 </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <h1 className="text-3xl font-bold text-center">LogIn!</h1>
-                <form className="card-body">
+                <form className="card-body" onSubmit={handleLogin}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" className="input input-bordered" required />
+                        <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
+                        <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                         <label className="label">
                             <Link to='/'>Forgot password?</Link>
                         </label>
