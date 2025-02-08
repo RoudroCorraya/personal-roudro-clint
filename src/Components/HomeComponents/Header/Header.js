@@ -41,6 +41,7 @@ const Header = () => {
             <li><Link className='hover:bg-accent' to='/aboutme'>About me</Link></li>
             
             <li><Link className='hover:bg-accent' to='/contact'>Contact</Link></li>
+            <li><Link className='hover:bg-accent' to='/dashboard/card'>Dashboard</Link></li>
           </ul>
         </div>
         <div className="navbar-end">

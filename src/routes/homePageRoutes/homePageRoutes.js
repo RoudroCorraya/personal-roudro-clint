@@ -8,6 +8,12 @@ import Projects from "../../Components/Projects/Projects";
 import LogIn from "../../Components/LogIn/LogIn";
 import SignUp from "../../Components/SignUp/SignUp";
 
+import DashbordLayout from "../../Layout/DashboardLayout/DashbordLayout";
+import DashBoardCart from "../../Components/SiteAuthority/DashboardCart/DashBoardCart";
+import Users from "../../Components/SiteAuthority/Users/Users";
+import CallInfo from "../../Components/SiteAuthority/Callinfo/CallInfo";
+import LetsTalk from "../../Components/LetsTalk/LetsTalk";
+
 
 const router = createBrowserRouter([
     {
@@ -41,9 +47,32 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/letstalk',
+                element: <LetsTalk></LetsTalk>
             }
         ]
         
+    },
+    {
+        path: '/dashboard',
+        element: <DashbordLayout></DashbordLayout>,
+        children:[
+            {
+                path:'/dashboard/card',
+                element: <DashBoardCart></DashBoardCart>
+            },
+            {
+                path: '/dashboard/users',
+                element: <Users></Users>,
+                loader: ()=> fetch('http://localhost:5000/dashboard/users')
+            },
+            {
+                path: '/dashboard/Call',
+                element: <CallInfo></CallInfo>
+            }
+        ]
     }
 
 ]);

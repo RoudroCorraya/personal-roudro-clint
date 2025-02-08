@@ -33,7 +33,7 @@ const SignUp = () => {
 
             .then(result => {
                 const user = result?.user;
-                fetch('http://localhost:5000/users', {
+                fetch('http://localhost:5000/dashboard/users', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -61,7 +61,7 @@ const SignUp = () => {
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 })
-                navigate('/')
+                navigate('/letstalk')
             })
 
 
@@ -82,7 +82,7 @@ const SignUp = () => {
     //         const createdUser = await createUser(email, password);
 
     //         // Make API call to save user in the database
-    //         const response = await fetch("http://localhost:5000/users", {
+    //         const response = await fetch("http://localhost:5000/dashboard/users", {
     //             method: "POST",  // Change to "PUT" if updating
     //             headers: {
     //                 "Content-Type": "application/json"

@@ -33,7 +33,7 @@ const LogIn = () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
-            navigate('/')
+            navigate('/letstalk')
        
       }
     
