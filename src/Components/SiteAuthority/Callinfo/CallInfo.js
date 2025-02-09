@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const CallInfo = () => {
+    const letsTalkLoaded = useLoaderData();
+    const [letsTalks, setLetsStalk] = useState(letsTalkLoaded);
     return (
         <div>
-            <h3>call information</h3>
+            <h3>call information : {letsTalks.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
@@ -11,32 +14,28 @@ const CallInfo = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Country</th>
+                            <th>Phone</th>
+                            <th>Query</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                        </tr>
+                        {
+                            letsTalks.map(letsTalk =>  <tr key={letsTalk._id}>
+                                <th>1</th>
+                                <td>{letsTalk.name}</td>
+                                <td>{letsTalk.country}</td>
+                                <td>{letsTalk.phone}</td>
+                                <td>{letsTalk.query}</td>
+                                <td>
+                                <button className="btn btn-xs text-white bg-red-500">Pending call</button>
+                                <button className="btn btn-xs bg-accent text-white">Already Done</button>
+                                </td>
+                            </tr>)
+                        }
+                       
+                       
                     </tbody>
                 </table>
             </div>

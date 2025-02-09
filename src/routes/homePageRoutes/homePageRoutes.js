@@ -13,6 +13,7 @@ import DashBoardCart from "../../Components/SiteAuthority/DashboardCart/DashBoar
 import Users from "../../Components/SiteAuthority/Users/Users";
 import CallInfo from "../../Components/SiteAuthority/Callinfo/CallInfo";
 import LetsTalk from "../../Components/LetsTalk/LetsTalk";
+import AddService from "../../Components/SiteAuthority/AddService/AddService";
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services></Services>
+                element: <Services></Services>,
+                loader: ()=>fetch('http://localhost:5000/services')
             },
             {
                 path: '/projects',
@@ -70,7 +72,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/Call',
-                element: <CallInfo></CallInfo>
+                element: <CallInfo></CallInfo>,
+                loader: ()=> fetch('http://localhost:5000/dashboard/letstalk')
+            },
+            {
+                path: '/dashboard/addservice',
+                element:<AddService></AddService>
             }
         ]
     }
