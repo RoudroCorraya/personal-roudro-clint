@@ -79,11 +79,11 @@ const Services = () => {
                         variants={imageVariants}
                         transition={{ duration: 0.5 }}
                         style={{ width: "30%", position: "absolute" }}
-                    
+
                     />
-                    
+
                 ))}
-                
+
                 <div className="flex flex-row gap-3">
                     <button
                         className="text-white mt-[400px] bg-accent rounded-md py-2 px-4"
@@ -95,7 +95,7 @@ const Services = () => {
                         className="text-white mt-[400px] bg-accent rounded-md py-2 px-4"
                         onClick={handleNext}
                     >
-                        <FaChevronCircleRight className='text-3xl'/>
+                        <FaChevronCircleRight className='text-3xl' />
                     </button>
                 </div>
             </div>
@@ -104,40 +104,56 @@ const Services = () => {
                 {
                     services.map(service => <div key={service._id} className='w-full min-h-64'>
                         <div className="card  w-80 my-24" onClick={handleFliped}>
-    
-                            <motion.div 
+
+                            <motion.div
                                 className='flip-card-inner '
                                 initial={false}
                                 animate={{ rotateY: isfliped ? 180 : 360 }}
                                 transition={{ duration: 0.6, animationDirection: "normal" }}
                                 onAnimationComplete={() => setIsAnimate(false)}
                             >
-                                <div className="card-body flip-card-front shadow-black shadow-xl drop-shadow-2xl text-white">
-                                    <h2 className="card-title">Card title!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent">Buy Now</button>
+                                <div
+                                    className="hero min-h-64 flip-card-front"
+                                    style={{
+                                        backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+                                    }}>
+                                    
+                                    <div className="hero-content text-neutral-content text-center">
+                                        <div className="max-w-md">
+                                            
+                                            <button className="btn btn-accent">Detaails</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="card-body flip-card-back shadow-black shadow-xl drop-shadow-2xl text-white">
-                                    <h2 className="card-title">Card back!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent">Buy Now</button>
+                                <div
+                                    className="hero min-h-64 flip-card-back"
+                                    style={{
+                                        backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+                                    }}>
+                                    <div className="hero-overlay bg-opacity-60"></div>
+                                    <div className="hero-content text-neutral-content text-center">
+                                        <div className="max-w-md">
+                                            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                                            <p className="mb-5">
+                                                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                                                quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                            </p>
+                                            <button className="btn btn-primary">Get Started</button>
+                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
-    
+
                         </div>
                     </div>)
                 }
-            
-            
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
             </div>
 
         </div>
