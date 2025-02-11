@@ -53,7 +53,7 @@ const AddService = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Set front Image</span>
                                 </label>
-                                <input name='image' type="file" placeholder="image url" className="input input-bordered" required />
+                                <input name='image' type="text" placeholder="image url" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
