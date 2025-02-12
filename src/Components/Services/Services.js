@@ -7,9 +7,13 @@ import service2 from '../../../src/assets/image/services/ser9.webp';
 import service3 from '../../../src/assets/image/services/ser12.jpeg';
 import service4 from '../../../src/assets/image/services/service7.webp';
 import service5 from '../../../src/assets/image/services/ser8.jpg';
+import { HiMiniWrenchScrewdriver } from "react-icons/hi2";
+import { TiTick } from "react-icons/ti";
+import { BsStickies } from "react-icons/bs";
 import './Service.css';
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { BiFullscreen } from 'react-icons/bi';
 
 
 const Services = () => {
@@ -17,8 +21,10 @@ const Services = () => {
     const [services, setServices] = useState(serviceLoaded);
     const [positionIndexes, setpositionIndexes] = useState([0, 1, 2, 3, 4]);
     const [isfliped, setIsfliped] = useState(false);
+    const [flippedId, setFlippedId] = useState(null);
     const [isAnimate, setIsAnimate] = useState(false);
     const handleFliped = () => {
+        
         if (!isAnimate) {
             setIsfliped(!isfliped);
             setIsAnimate(true);
@@ -63,7 +69,7 @@ const Services = () => {
 
 
     return (
-        <div className='my-20'>
+        <div className='my-28'>
             <h3 className='text-3xl font-semibold text-white text-center'>Our Work Environment</h3>
 
 
@@ -100,10 +106,10 @@ const Services = () => {
                 </div>
             </div>
             <h3 className='text-3xl font-semibold text-white text-center mt-10'>Services We Offer !</h3>
-            <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 flip-card'>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 flip-card '>
                 {
-                    services.map(service => <div key={service._id} className='w-full min-h-64'>
-                        <div className="card  w-80 my-24" onClick={handleFliped}>
+                    services.map(service => <div key={service._id} className='w-full min-h-64 my-3'>
+                        <div className="card  w-80 my-24">
 
                             <motion.div
                                 className='flip-card-inner '
@@ -112,34 +118,46 @@ const Services = () => {
                                 transition={{ duration: 0.6, animationDirection: "normal" }}
                                 onAnimationComplete={() => setIsAnimate(false)}
                             >
+                               
                                 <div
-                                    className="hero min-h-64 flip-card-back"
+                                    className="hero min-h-64   flip-card-front border-4  rounded-2xl shadow-black shadow-xl drop-shadow-2xl"
                                     style={{
                                         backgroundImage: `url(${service?.image})`,
                                     }}>
-                                    <div className="hero-overlay bg-opacity-60"></div>
-                                    <div className="hero-content text-neutral-content text-center">
-                                        <div className="max-w-md">
-                                            
-                                            <button className="btn btn-accent text-white">Detaails</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    className="hero min-h-64 flip-card-front"
-                                    style={{
-                                        backgroundImage: `url(${service?.image})`,
-                                    }}>
-                                    <div className="hero-overlay bg-opacity-60"></div>
+                                    <div className="hero-overlay bg-opacity-60 rounded-2xl"></div>
                                     <div className="hero-content text-neutral-content text-center">
                                         <div className="max-w-md text-white">
-                                            <h1 className="mb-5 text-5xl font-bold">{service?.title}</h1>
+                                            <h1 className="mb-5 text-3xl font-bold">{service?.title}</h1>
                                             <p className="mb-5">
                                                 {
                                                     service?.details
                                                 }
                                             </p>
-                                            <button className="btn btn-accent text-white">Get Service</button>
+                                            <button className="btn btn-accent text-white" onClick={()=>handleFliped(service._id)}>Details</button>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="hero min-h-64 flip-card-back rounded-2xl border-4 shadow-black shadow-xl drop-shadow-2xl"
+                                    style={{
+                                        
+                                        backgroundImage: `url(${service?.image})`,
+                                    }}>
+                                    <div className="hero-overlay bg-opacity-60 rounded-2xl"></div>
+                                    <div className="hero-content text-neutral-content text-center">
+                                        <div className="max-w-md">
+                                            <ul className='text-white'>
+                                                <li className=''><span><TiTick className='inline-block text-2xl text-accent' /></span>Additional Change</li>
+                                                <li><span><TiTick className='inline-block text-2xl text-accent' /></span>Code Review</li>
+                                                <li><span><TiTick className='inline-block text-2xl text-accent' /></span>Features Issue</li>
+                                                <li><span><TiTick className='inline-block text-2xl text-accent' /></span>Add Features</li>
+                                                <li><span><TiTick className='inline-block text-2xl text-accent' /></span>CSS Animation</li>
+                                                <li><span><TiTick className='inline-block text-2xl text-accent' /></span>Responsiveness</li>
+                                            </ul>
+                                            <Link to={`/servicedetails/${service._id}`}><button className="btn btn-accent text-white">Get Service</button></Link>
+                                            <BsStickies className='inline-block text-2xl text-accent mx-3' onClick={handleFliped}/>
                                         </div>
                                     </div>
                                 </div>

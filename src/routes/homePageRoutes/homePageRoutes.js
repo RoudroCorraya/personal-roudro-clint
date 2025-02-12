@@ -14,6 +14,7 @@ import Users from "../../Components/SiteAuthority/Users/Users";
 import CallInfo from "../../Components/SiteAuthority/Callinfo/CallInfo";
 import LetsTalk from "../../Components/LetsTalk/LetsTalk";
 import AddService from "../../Components/SiteAuthority/AddService/AddService";
+import ServiceDetails from "../../Components/Services/ServiceDetails";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
                 path: '/services',
                 element: <Services></Services>,
                 loader: ()=>fetch('http://localhost:5000/services')
+            },
+            {
+                path: '/servicedetails/:_id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({params})=> fetch(`http://localhost:5000/servicedetails/${params?._id}`)
+
             },
             {
                 path: '/projects',
