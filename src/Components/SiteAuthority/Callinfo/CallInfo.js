@@ -22,8 +22,8 @@ const CallInfo = () => {
                     </thead>
                     <tbody>
                         {
-                            letsTalks.map(letsTalk =>  <tr key={letsTalk._id}>
-                                <th>1</th>
+                            letsTalks.map((letsTalk, index) =>  <tr key={letsTalk._id}>
+                                <th>{index + 1}</th>
                                 <td>{letsTalk.name}</td>
                                 <td>{letsTalk.country}</td>
                                 <td>{letsTalk.phone}</td>

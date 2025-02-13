@@ -11,8 +11,8 @@ const Projects = () => {
                     <div role="tabpanel" className="tab-content p-10">
 
 
-                        <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -26,7 +26,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -40,7 +40,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -54,7 +54,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -83,8 +83,8 @@ const Projects = () => {
                         aria-label="Tab 2"
                         defaultChecked />
                     <div role="tabpanel" className="tab-content p-10">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -98,7 +98,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -112,7 +112,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -133,8 +133,8 @@ const Projects = () => {
 
                     <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Tab 3" />
                     <div role="tabpanel" className="tab-content p-10">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -148,7 +148,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -162,7 +162,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -176,7 +176,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -190,7 +190,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -204,7 +204,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card card-compact bg-base-100 w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
+                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure>
                                     <img
                                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
