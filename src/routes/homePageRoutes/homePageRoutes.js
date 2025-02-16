@@ -15,6 +15,7 @@ import CallInfo from "../../Components/SiteAuthority/Callinfo/CallInfo";
 import LetsTalk from "../../Components/LetsTalk/LetsTalk";
 import AddService from "../../Components/SiteAuthority/AddService/AddService";
 import ServiceDetails from "../../Components/Services/ServiceDetails";
+import AddProject from "../../Components/SiteAuthority/AddProject/AddProject";
 
 
 const router = createBrowserRouter([
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/projects',
-                element: <Projects></Projects>
+                element: <Projects></Projects>,
+                loader: ()=>fetch('http://localhost:5000/allprojects')
             },
             {
                 path: '/aboutme',
@@ -85,6 +87,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addservice',
                 element:<AddService></AddService>
+            },
+            {
+                path: '/dashboard/addproject',
+                element: <AddProject></AddProject>
             }
         ]
     }

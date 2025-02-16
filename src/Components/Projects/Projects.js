@@ -1,73 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Project.css';
+import { useLoaderData } from 'react-router-dom';
 
 const Projects = () => {
+    const [selectedValue, setSelectedValue] = useState("webDesign");
+    const loadedProjects = useLoaderData();
+    const [projects, setProjects] = useState([]);
+
+    const handleProjects = (value) =>{
+        const projectTypeData = value;
+       
+        console.log(projectTypeData);
+        
+       
+
+        
+        fetch(`http://localhost:5000/allprojects/${projectTypeData}`)
+        .then(res => res.json())
+        .then(projectdatas =>{
+            setProjects(projectdatas);
+            console.log('add projetc get data', projectdatas);
+        })
+
+    }
     return (
         <div>
             <h1>Projects</h1>
             <div className='flex text-white'>
                 <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab modyif" aria-label="Tab 1" />
+                <input type="radio" name="my_tabs_1" value="webdesign" role="tab" className="tab modyif" aria-label="All Projects" defaultChecked/>
+                <div role="tabpanel" className="tab-content p-10">
+
+
+                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                            {
+                                loadedProjects.map((loadProject)=><div key={loadProject._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
+                                <figure className='h-40'>
+                                    <img className='h-full w-full'
+                                        src={loadProject.Thum_image}
+                                        alt="Shoes" />
+                                </figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{loadProject.title}</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                    <div className="card-actions justify-end">
+                                        <button className="btn btn-accent text-white">View Now</button>
+                                    </div>
+                                </div>
+                            </div>)
+                            }
+                            
+                            
+                           
+                            
+                            
+                        </div>
+
+
+
+                    </div>
+                    <input onClick={(event)=>handleProjects(event.target.value)} type="radio" name="my_tabs_1" value="webdesign" role="tab" className="tab modyif" aria-label="Web Design"/>
+                    
                     <div role="tabpanel" className="tab-content p-10">
 
 
                         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
+                            {
+                                projects.map(project =><div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
+                                    <figure className='h-40'>
+                                        <img className='h-full w-full'
+                                            src={project.Thum_image}
+                                            alt="Shoes" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{project.title}</h2>
+                                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                                        <div className="card-actions justify-end">
+                                            <button className="btn btn-accent text-white">View Now</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>)
+                            }
+                            
+                            
+                           
+                            
                             
                         </div>
 
@@ -76,148 +93,60 @@ const Projects = () => {
                     </div>
 
                     <input
+                    onClick={(event)=>handleProjects(event.target.value)}
                         type="radio"
                         name="my_tabs_1"
+                        value="customization"
                         role="tab"
                         className="tab"
-                        aria-label="Tab 2"
-                        defaultChecked />
+                        aria-label="Customization"
+                         />
                     <div role="tabpanel" className="tab-content p-10">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
+                           
+                            
+                    {
+                                projects.map(project =><div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
+                                    <figure className='h-40'>
+                                        <img className='h-full w-full'
+                                            src={project.Thum_image}
+                                            alt="Shoes" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{project.title}</h2>
+                                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                                        <div className="card-actions justify-end">
+                                            <button className="btn btn-accent text-white">View Now</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>)
+                            }
                            
                             
                         </div>
                     </div>
 
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Tab 3" />
+                    <input onClick={(event)=>handleProjects(event.target.value)} type="radio" name="my_tabs_1" value="development" role="tab" className="tab" aria-label="Development" />
                     <div role="tabpanel" className="tab-content p-10">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
+                           
+                    {
+                                projects.map(project =><div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
+                                    <figure className='h-40'>
+                                        <img className='h-full w-full'
+                                            src={project.Thum_image}
+                                            alt="Shoes" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{project.title}</h2>
+                                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                                        <div className="card-actions justify-end">
+                                            <button className="btn btn-accent text-white">View Now</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80 m-3 shadow-black shadow-xl drop-shadow-2xl">
-                                <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Shoes" />
-                                </figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">Shoes!</h2>
-                                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-accent text-white">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>)
+                            }
+                           
                             
                         </div>
                     </div>
