@@ -3,7 +3,7 @@ import MainLayout from "../../Layout/MainLayout/MainLayout";
 import Home from "../../Components/HomeComponents/Home/Home";
 import Services from "../../Components/Services/Services";
 import Aboutme from "../../Components/Aboutme/Aboutme";
-import Contact from "../../Components/Contact/Contact";
+
 import Projects from "../../Components/Projects/Projects";
 import LogIn from "../../Components/LogIn/LogIn";
 import SignUp from "../../Components/SignUp/SignUp";
@@ -16,9 +16,11 @@ import LetsTalk from "../../Components/LetsTalk/LetsTalk";
 import AddService from "../../Components/SiteAuthority/AddService/AddService";
 import ServiceDetails from "../../Components/Services/ServiceDetails";
 import AddProject from "../../Components/SiteAuthority/AddProject/AddProject";
+
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AddBlog from "../../Components/SiteAuthority/AddBlog/AddBlog";
 import HomeBlogDetails from "../../Components/HomeComponents/HomeBlog/HomeBlogDetails";
+import Contact from "../../Components/SiteAuthority/Contact/Contact";
 
 
 const router = createBrowserRouter([
@@ -49,10 +51,6 @@ const router = createBrowserRouter([
             {
                 path: '/aboutme',
                 element: <Aboutme></Aboutme>
-            },
-            {
-                path: '/contact',
-                element: <Contact></Contact>
             },
             {
                 path: '/login',
@@ -104,7 +102,12 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addblog',
                 element: <AddBlog></AddBlog>
-            }
+            },
+           {
+            path: '/dashboard/contact',
+            element: <Contact></Contact>,
+            loader: ()=> fetch('http://localhost:5000/homecontact')
+           }
         ]
     }
 

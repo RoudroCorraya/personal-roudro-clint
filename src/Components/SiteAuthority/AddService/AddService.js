@@ -5,7 +5,7 @@ import { useRouteLoaderData } from 'react-router-dom';
 const AddService = () => {
     
    
-            const Swal = require('sweetalert2')
+            const Swal = require('sweetalert2');
     const handleAddService = event =>{
         event.preventDefault();
         const form = event.target;

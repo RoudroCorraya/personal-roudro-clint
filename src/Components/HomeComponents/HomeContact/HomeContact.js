@@ -4,6 +4,7 @@ import contactImage from '../../../assets/image/HomeContact/glove3.png';
 import { FaLocationDot, FaMapLocation, FaMapLocationDot, FaPeopleGroup } from 'react-icons/fa6';
 import { FaPeopleCarry } from 'react-icons/fa';
 const HomeContact = () => {
+    const Swal = require('sweetalert2');
     const handleSubmitContact = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -13,7 +14,25 @@ const HomeContact = () => {
         
         const query = form.query.value;
         const contact = {name, email, phone, query};
+        fetch('http://localhost:5000/homecontact', {
+            method: 'POST',
+            headers: {
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(contact)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log('data posted contact', data);
+        })
         console.log('home Contact data', contact);
+        form.reset();
+                Swal.fire({
+                    title: 'Your query send successfully',
+
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
     }
     return (
         <div className='contact'>
