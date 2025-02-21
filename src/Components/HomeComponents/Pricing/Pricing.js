@@ -10,6 +10,7 @@ const Pricing = () => {
         <div className='my-24'>
             <h3 className='text-3xl font-semibold text-white text-center my-28'>Pricing Table</h3>
             <div className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
+            <div className='hover:-mt-6 transition-all duration-500'>
             <div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
                 <div className="card-body ">
                 <FaRegCalendarAlt className='mx-auto text-3xl '/>
@@ -31,7 +32,8 @@ const Pricing = () => {
                     </div>
                 </div>
             </div>
-            <div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
+            </div>
+            <div className='hover:-mt-6 transition-all duration-500'><div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
                 <div className="card-body ">
                 <RiFilePaper2Fill className='mx-auto text-3xl '/>
                     <h2 className="card-title mx-auto">Fixed-price Work</h2>
@@ -51,8 +53,8 @@ const Pricing = () => {
                         <button className="btn bg-accent text-white">Hire Now</button>
                     </div>
                 </div>
-            </div>
-            <div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
+            </div></div>
+            <div className='hover:-mt-6 transition-all duration-500'><div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
                 <div className="card-body ">
                 <PiHourglassFill className='mx-auto text-3xl '/>
                 <h2 className="card-title mx-auto">Hourly-basis Work</h2>
@@ -71,7 +73,8 @@ const Pricing = () => {
                         <button className="btn bg-accent text-white">Hire Now</button>
                     </div>
                 </div>
-            </div>
+            </div></div>
+            
         </div>
         </div>
     );

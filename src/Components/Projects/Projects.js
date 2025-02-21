@@ -32,9 +32,9 @@ const Projects = () => {
                 <div role="tabpanel" className="tab-content p-10">
 
 
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
                             {
-                                loadedProjects.map((loadProject)=><div key={loadProject._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
+                                loadedProjects.map((loadProject)=><div key={loadProject._id} className="card card-compact bg-base-100   m-3 shadow-black shadow-xl drop-shadow-2xl">
                                 <figure className='h-40'>
                                     <img className='h-full w-full'
                                         src={loadProject.Thum_image}

@@ -157,7 +157,7 @@ const Services = () => {
                                                 <li><span><TiTick className='inline-block text-2xl text-accent' /></span>Responsiveness</li>
                                             </ul>
                                             <Link to={`/servicedetails/${service._id}`}><button className="btn btn-accent text-white">Get Service</button></Link>
-                                            <BsStickies className='inline-block text-2xl text-accent mx-3' onClick={handleFliped}/>
+                                            <Link><BsStickies className='inline-block text-2xl text-accent mx-3' onClick={handleFliped}/></Link>
                                         </div>
                                     </div>
                                 </div>

@@ -16,6 +16,9 @@ import LetsTalk from "../../Components/LetsTalk/LetsTalk";
 import AddService from "../../Components/SiteAuthority/AddService/AddService";
 import ServiceDetails from "../../Components/Services/ServiceDetails";
 import AddProject from "../../Components/SiteAuthority/AddProject/AddProject";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AddBlog from "../../Components/SiteAuthority/AddBlog/AddBlog";
+import HomeBlogDetails from "../../Components/HomeComponents/HomeBlog/HomeBlogDetails";
 
 
 const router = createBrowserRouter([
@@ -61,7 +64,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/letstalk',
-                element: <LetsTalk></LetsTalk>
+                element: <PrivateRoute><LetsTalk></LetsTalk></PrivateRoute>
+            },
+            {
+                path: '/blogs/:_id',
+                element: <HomeBlogDetails></HomeBlogDetails>,
+                loader: ({params})=> fetch(`http://localhost:5000/blogs/${params?._id}`)
+
             }
         ]
         
@@ -72,7 +81,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard/card',
-                element: <DashBoardCart></DashBoardCart>
+                element: <PrivateRoute><DashBoardCart></DashBoardCart></PrivateRoute>
             },
             {
                 path: '/dashboard/users',
@@ -91,6 +100,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addproject',
                 element: <AddProject></AddProject>
+            },
+            {
+                path: '/dashboard/addblog',
+                element: <AddBlog></AddBlog>
             }
         ]
     }

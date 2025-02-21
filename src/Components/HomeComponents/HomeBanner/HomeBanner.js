@@ -61,10 +61,10 @@ const HomeBanner = () => {
                 </div>
                 <div className=' w-full'>
                     <div className=' w-full iconCOntrol'>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaFacebook className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><AiFillInstagram className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaSquareXTwitter className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent'><FaLinkedin className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaFacebook className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><AiFillInstagram className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaSquareXTwitter className='inline-block' /></Link>
+                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaLinkedin className='inline-block' /></Link>
 
                     </div>
 

@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 
+
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css"; // Import styles
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css"; // Import default styles
+
 const LetsTalk = () => {
     // const [userQuery, setuserQuery] = useState();
-     const navigate = useNavigate();
-        const Swal = require('sweetalert2')
-    
-    const handleLetsTalk = event =>{
+    const [date, setDate] = useState(new Date());
+
+    const navigate = useNavigate();
+    const Swal = require('sweetalert2');
+
+    const handleLetsTalk = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const country = form.country.value;
         const phone = form.phone.value;
         const query = form.query.value;
-        const userQuery = {name, country, phone, query}
+        const userQuery = { name, country, phone, query }
 
         console.log('cheaking from', userQuery);
         fetch('http://localhost:5000/letstalk', {
@@ -23,34 +31,38 @@ const LetsTalk = () => {
             },
             body: JSON.stringify(userQuery)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log('letstalk server Post data', data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('letstalk server Post data', data);
+            })
         form.reset();
-                Swal.fire({
-                    title: 'Our team will contact you within 2 hours',
+        Swal.fire({
+            title: 'Our team will contact you within 2 hours',
 
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
-                navigate('/')
-        
-        
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
+        navigate('/')
+
+
     }
     // useEffect(()=>{
-        
-        
+
+
     // },[]);
     return (
-        <div>
+        <div className='text-white'>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Please provide the informations</h1>
+                        {/* <h1 className="text-5xl font-bold">Please provide the informations</h1>
                         <p className="py-6">
                            Our team will contact you within 2 hours
-                        </p>
+                        </p> */}
+                        <h2>Pick a Date</h2>
+                        <Calendar onChange={setDate} value={date} />
+                        <p>Selected date: {date.toDateString()}</p>
+
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form onSubmit={handleLetsTalk} className="card-body">

@@ -17,6 +17,7 @@ const DashbordLayout = () => {
                     <li className="my-3"><Link className="text-white" to='/dashboard/Call'>Call Info</Link></li>
                     <li className="my-3"><Link className="text-white" to='/dashboard/addservice'>Add service</Link></li>
                     <li className="my-3"><Link className="text-white" to='/dashboard/addproject'>Add project</Link></li>
+                    <li className="my-3"><Link className="text-white" to='/dashboard/addblog'>Add Blog</Link></li>
                 </ul>
                </div>
             </div>

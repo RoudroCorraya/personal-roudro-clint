@@ -17,8 +17,9 @@ const HomeWhatiDo = () => {
             </div>
             <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 '>
 
-                <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
-                    <div className="card-body">
+                <div className='hover:-mt-6 transition-all duration-500'>
+                <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white ">
+                    <div className="card-body hover:-mt-6 transition-all duration-500">
                     <span ><FaCode  className='text-3xl'/></span>
                         <h2 className="card-title">Web Design</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -27,6 +28,8 @@ const HomeWhatiDo = () => {
                         </div>
                     </div>
                 </div>
+                </div>
+                <div className='hover:-mt-6 transition-all duration-500'>
                 <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
                     <span><VscVscode className='text-3xl'/></span>
@@ -37,6 +40,8 @@ const HomeWhatiDo = () => {
                         </div>
                     </div>
                 </div>
+                </div>
+                <div className='hover:-mt-6 transition-all duration-500'>
                 <div className="card bg-base-100 lg:w-80 md:w-auto sm:w-auto rounded-none shadow-black shadow-xl drop-shadow-2xl text-white">
                     <div className="card-body">
                     <span><BiSolidCustomize  className='text-3xl'/></span>
@@ -46,6 +51,7 @@ const HomeWhatiDo = () => {
                             <button className="btn bg-accent text-white">Details</button>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

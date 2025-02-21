@@ -4,6 +4,17 @@ import contactImage from '../../../assets/image/HomeContact/glove3.png';
 import { FaLocationDot, FaMapLocation, FaMapLocationDot, FaPeopleGroup } from 'react-icons/fa6';
 import { FaPeopleCarry } from 'react-icons/fa';
 const HomeContact = () => {
+    const handleSubmitContact = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        
+        const query = form.query.value;
+        const contact = {name, email, phone, query};
+        console.log('home Contact data', contact);
+    }
     return (
         <div className='contact'>
             {/* <h3 className='text-3xl font-semibold text-white text-center my-28'>Contact Us</h3> */}
@@ -27,22 +38,24 @@ const HomeContact = () => {
                 
             </div>
                 <div className='contact w-80 mx-auto'>
-                    <label className="input input-bordered flex items-center gap-2 my-6">
+                  <form onSubmit={handleSubmitContact}>
+                  <label className="input input-bordered flex items-center gap-2 my-6">
                         
-                        <input type="text" className="grow" placeholder="Name" />
+                        <input name='name' type="text" className="grow" placeholder="Name" />
                     </label>
                     <label className="input input-bordered flex items-center gap-2 my-6">
                        
-                        <input type="text" className="grow" placeholder="Email" />
+                        <input name='email' type="email" className="grow" placeholder="Email" />
                     </label>
                     <label className="input input-bordered flex items-center gap-2 my-6">
                        
-                        <input type="text" className="grow" placeholder="Phone" />
+                        <input name='phone' type="text" className="grow" placeholder="Phone" />
                     </label>
                   
                        
-                    <textarea className="textarea textarea-bordered w-80 h-44" placeholder="Write your query"></textarea>
-                    <button className="btn btn-accent">Submit</button>
+                    <textarea name='query' className="textarea textarea-bordered w-80 h-44" placeholder="Write your query"></textarea>
+                    <button type='submit' className="btn btn-accent">Submit</button>
+                  </form>
                 </div>
                 
             </div>

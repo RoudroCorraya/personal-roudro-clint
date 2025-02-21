@@ -7,3 +7,11 @@
 .modyif::before{
     color: aqua;
 } */
+
+@media (max-width: 480px) {
+    /* CSS rules for mobile devices */
+    .product{
+        width: 256px !important;
+    }
+}
+
