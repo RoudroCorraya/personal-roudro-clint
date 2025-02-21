@@ -28,7 +28,7 @@ const Aboutme = () => {
 
             
 
-               <p className='my-3 text-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer  </p>
+               <p className='my-3 text-white'>I have a strong grasp of front-end and back-end technologies. Your expertise in creating responsive, dynamic, and visually appealing websites sets you apart in the industry.</p>
               
                <button className="btn btn-accent ease-[.14s] translate-y-24 ">Download CV <span><FaDownload /></span></button>
             

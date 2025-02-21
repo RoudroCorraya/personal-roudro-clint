@@ -96,7 +96,6 @@ const HomeBanner = () => {
                     <div className="outer-div" ref={outerDivRef} style={{ transition: "transform 0.4s ease" }}>
                         <div className="inner-div" ref={innerDivRef} style={{ transition: "transform 0.4s ease" }}></div>
                     </div>
-
                     {/* ============================================= */}
                 </div>
             </div>

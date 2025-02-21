@@ -79,12 +79,12 @@ const Services = () => {
                         key={index}
                         src={image}
                         alt={image}
-                        className="rounded-[12px] h-80"
+                        className="rounded-[12px] h-80 w-80"
                         initial="center"
                         animate={position[positionIndexes[index]]}
                         variants={imageVariants}
                         transition={{ duration: 0.5 }}
-                        style={{ width: "30%", position: "absolute" }}
+                        style={{position: "absolute" }}
 
                     />
 
@@ -108,7 +108,7 @@ const Services = () => {
             <h3 className='text-3xl font-semibold text-white text-center mt-10'>Services We Offer !</h3>
             <div className=' grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 flip-card '>
                 {
-                    services.map(service => <div key={service._id} className='w-full min-h-64 my-3'>
+                    services.map(service => <div key={service._id} className='w-full min-h-64 my-3 flex justify-center'>
                         <div className="card  w-80 my-24">
 
                             <motion.div
