@@ -7,7 +7,8 @@ const Projects = () => {
     const [selectedValue, setSelectedValue] = useState("webDesign");
     const loadedProjects = useLoaderData();
     const [projects, setProjects] = useState([]);
-    
+    const [selectedProject, setSelectedProject] = useState(null);
+
 
     const handleProjects = (value) => {
         const projectTypeData = value;
@@ -27,6 +28,22 @@ const Projects = () => {
     }
     return (
         <div>
+            {/* =====================modal start========================== */}
+            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        {selectedProject && (
+          <div className="modal-box">
+            <img src={selectedProject.Thum_image} alt="Thumbnail" />
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn bg-red-700">
+                  <span className="text-white text-3xl">X</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+      </dialog>
+            {/* =====================modal end========================== */}
             <h1>Projects</h1>
             <div className='flex text-white'>
                 <div role="tablist" className="tabs tabs-bordered">
@@ -46,8 +63,22 @@ const Projects = () => {
                                         <h2 className="card-title">{loadProject.title}</h2>
                                         <p>If a dog chews shoes whose shoes does he choose?</p>
                                         <div className="card-actions justify-end">
-                                            <button  className="btn btn-accent text-white">View Now</button>
-                                            
+                                            <button onClick={() => {
+                                                setSelectedProject(loadProject);
+                                                document.getElementById("my_modal_5").showModal();
+                                            }} className="btn btn-accent text-white">View Now</button>
+                                            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                                {selectedProject && (
+                                                    <div className="modal-box">
+                                                        <img src={selectedProject.Thum_image} alt="Thumbnail" />
+                                                        <div className="modal-action">
+                                                            <form method="dialog">
+                                                                <button className="btn bg-red-700"><span className='text-white text-3xl'>X</span></button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </dialog>
                                         </div>
                                     </div>
                                 </div>)
@@ -79,20 +110,24 @@ const Projects = () => {
                                         <h2 className="card-title">{project.title}</h2>
                                         <p>If a dog chews shoes whose shoes does he choose?</p>
                                         <div className="card-actions justify-end">
-                                            <button className="btn btn-accent text-white">View Now</button>
+                                            <button onClick={() => {
+                                                setSelectedProject(project);
+                                                document.getElementById("my_modal_5").showModal();
+                                            }} className="btn btn-accent text-white">View Now</button>
+
                                         </div>
-                                        
+
                                     </div>
                                 </div>)
                             }
 
-
+                           
 
 
 
                         </div>
 
-
+                        
 
                     </div>
 
@@ -120,9 +155,12 @@ const Projects = () => {
                                         <h2 className="card-title">{project.title}</h2>
                                         <p>If a dog chews shoes whose shoes does he choose?</p>
                                         <div className="card-actions justify-end">
-                                            <button className="btn btn-accent text-white">View Now</button>
+                                            <button onClick={() => {
+                                                setSelectedProject(project);
+                                                document.getElementById("my_modal_5").showModal();
+                                            }} className="btn btn-accent text-white">View Now</button>
                                         </div>
-                                        
+
                                     </div>
                                 </div>)
                             }
@@ -146,9 +184,12 @@ const Projects = () => {
                                         <h2 className="card-title">{project.title}</h2>
                                         <p>If a dog chews shoes whose shoes does he choose?</p>
                                         <div className="card-actions justify-end">
-                                            <button className="btn btn-accent text-white">View Now</button>
+                                            <button onClick={() => {
+                                                setSelectedProject(project);
+                                                document.getElementById("my_modal_5").showModal();
+                                            }} className="btn btn-accent text-white">View Now</button>
                                         </div>
-                                       
+
                                     </div>
                                 </div>)
                             }
