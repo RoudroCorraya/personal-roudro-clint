@@ -4,13 +4,17 @@ import logo from './logo.svg';
 import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './routes/homePageRoutes/homePageRoutes';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 
 
 function App() {
   return (
    <div className='banner'>
      <div className="max-w-[1140px] mx-auto">
+     
       <RouterProvider router={router}></RouterProvider>
+      
     </div>
    </div>
   );

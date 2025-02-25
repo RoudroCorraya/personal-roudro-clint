@@ -17,6 +17,7 @@ const HomeBanner = () => {
     const innerDivRef = useRef(null);
 
     useEffect(() => {
+        if (!outerDivRef.current || !innerDivRef.current) return;
         let outerDegree = 0;
 
         let innerDegree = 0;
@@ -26,6 +27,8 @@ const HomeBanner = () => {
             const outerDiv = outerDivRef.current;
 
             const innerDiv = innerDivRef.current;
+            if (!outerDiv || !innerDiv) return;
+            if (!outerDivRef.current || !innerDivRef.current) return;
             outerDegree += rotationSpeed;   // Outer div rotates by the defined speed
             innerDegree -= rotationSpeed;   // Inner div rotates in the opposite direction
 
@@ -37,7 +40,7 @@ const HomeBanner = () => {
         const interval = setInterval(rotateOuterDiv, intervalTime);
         return () => clearInterval(interval);
 
-    }, []);
+    }, [outerDivRef.current, innerDivRef.current]);
     // ======================================
     return (
 
@@ -93,8 +96,8 @@ const HomeBanner = () => {
             <div className='m-auto'>
                 <div className="image">
                     {/* ============================================= */}
-                    <div className="outer-div" ref={outerDivRef} style={{ transition: "transform 0.4s ease" }}>
-                        <div className="inner-div" ref={innerDivRef} style={{ transition: "transform 0.4s ease" }}></div>
+                    <div className="outer-div" ref={outerDivRef}>
+                        <div className="inner-div" ref={innerDivRef}></div>
                     </div>
                     {/* ============================================= */}
                 </div>

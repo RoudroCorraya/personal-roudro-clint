@@ -98,7 +98,7 @@ const Projects = () => {
                     <div role="tabpanel" className="tab-content p-10">
 
 
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                             {
                                 projects.map(project => <div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
                                     <figure className='h-40'>
@@ -141,7 +141,7 @@ const Projects = () => {
                         aria-label="Customization"
                     />
                     <div role="tabpanel" className="tab-content p-10">
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
 
                             {
@@ -171,7 +171,7 @@ const Projects = () => {
 
                     <input onClick={(event) => handleProjects(event.target.value)} type="radio" name="my_tabs_1" value="development" role="tab" className="tab" aria-label="Development" />
                     <div role="tabpanel" className="tab-content p-10">
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
                             {
                                 projects.map(project => <div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">

@@ -28,8 +28,8 @@ const Contact = () => {
                                 <td>{contact?.phone}</td>
                                 <td>{contact?.query}</td>
                                 <td className=''>
-                                    <button className="btn btn-sm text-white bg-red-500">Pending</button>
-                                    <button className="btn btn-sm bg-accent text-white">Resolved</button>
+                                    <button className="btn btn-sm text-white bg-red-500">Gmail</button>
+                                    <button className="btn btn-sm bg-accent text-white">Call</button>
                                 
                                 </td>
                                 

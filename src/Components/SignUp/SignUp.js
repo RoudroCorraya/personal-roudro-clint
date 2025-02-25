@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { AuthContext, authContext } from '../../Provider/AuthProvider';
 // import { createContext } from 'react';
 import './SignUp.css';
+import { linkWithCredential } from 'firebase/auth';
 
 
 const SignUp = () => {
@@ -42,7 +43,8 @@ const SignUp = () => {
                         name: name, // Ensure inputName has the value
                         user: user
                     }),
-                })
+                   
+                }, )
                     .then(res => res.json())
                     .then(data => {
                         console.log('created user data',data);

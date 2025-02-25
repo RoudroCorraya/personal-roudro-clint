@@ -1,10 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import './Header.css';
 
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
+  
+  
+  
   const handleSignOut = () =>{
     logOut()
     .then(()=>{})
@@ -43,16 +46,27 @@ const Header = () => {
           <Link className="btn btn-ghost text-xl text-white">RisCO .</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white">
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/'>Home</Link></li>
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/services'>Services</Link></li>
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/projects'>Project</Link></li>
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/aboutme'>About me</Link></li>
+         
+           <ul className="menu menu-horizontal px-1 text-white">
+           <li><Link className='hover:bg-accent transition-all duration-500' to='/'>Home</Link></li>
+           <li><Link className='hover:bg-accent transition-all duration-500' to='/services'>Services</Link></li>
+           <li><Link className='hover:bg-accent transition-all duration-500' to='/projects'>Project</Link></li>
+           <li><Link className='hover:bg-accent transition-all duration-500' to='/aboutme'>About me</Link></li>
+           
+           <li><Link className='hover:bg-accent transition-all duration-500' to='/contact'>Contact</Link></li>
+          
+           
+              <li><Link className='hover:bg-accent transition-all duration-500' to='/dashboard/card'>Dashboard</Link></li>
             
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/contact'>Contact</Link></li>
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/dashboard/card'>Dashboard</Link></li>
-          </ul>
+        
+          
+         </ul>
+         
+         
+         
+        
         </div>
+        
         <div className="navbar-end">
           {
             user ? <><Link to='/letstalk' className="btn text-white bg-accent">Let's Talk</Link>

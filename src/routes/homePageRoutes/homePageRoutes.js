@@ -21,6 +21,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AddBlog from "../../Components/SiteAuthority/AddBlog/AddBlog";
 import HomeBlogDetails from "../../Components/HomeComponents/HomeBlog/HomeBlogDetails";
 import Contact from "../../Components/SiteAuthority/Contact/Contact";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient();
 
 
 const router = createBrowserRouter([
@@ -83,7 +85,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/users',
-                element: <Users></Users>,
+                element: <QueryClientProvider client={queryClient}><Users></Users></QueryClientProvider>,
                 loader: ()=> fetch('http://localhost:5000/dashboard/users')
             },
             {
