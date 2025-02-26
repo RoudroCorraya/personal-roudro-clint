@@ -55,13 +55,12 @@ const LetsTalk = () => {
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        {/* <h1 className="text-5xl font-bold">Please provide the informations</h1>
+                        <h1 className="text-5xl font-bold">Please tell you sweetable time and date upcoming 2 weeks in the query box</h1>
                         <p className="py-6">
-                           Our team will contact you within 2 hours
-                        </p> */}
-                        <h2>Pick a Date</h2>
-                        <Calendar onChange={setDate} value={date} />
-                        <p>Selected date: {date.toDateString()}</p>
+                           Our team will contact you for the appoint confirmation within 2 hours through mail or phone call according to the query box.
+                           
+                        </p>
+                        
 
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

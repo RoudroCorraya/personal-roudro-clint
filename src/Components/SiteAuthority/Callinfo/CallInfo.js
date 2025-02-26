@@ -2,18 +2,50 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaCheckCircle } from "react-icons/fa";
 import axios from 'axios';
+import { QueryClientProvider, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 
 const CallInfo = () => {
     const letsTalkLoaded = useLoaderData();
-    const [letsTalks, setLetsStalk] = useState(letsTalkLoaded);
+    // const [letsTalks, setLetsStalk] = useState(letsTalkLoaded);
     // const [callStatus, setCallStatus] = useState({});
+    const queryClient = useQueryClient();
+
+    const { data: letsTalks = [], refetch } = useQuery({
+        queryKey: ['letsTalks'],
+        queryFn: async () => {
+            const res = await axios.get("http://localhost:5000/dashboard/letstalk");
+            return res.data;
+        }
+    });
+    const mutation = useMutation({
+        mutationFn: (id) => axios.put(`http://localhost:5000/call/${id}`, { callInfo: "done" }),
+        onSuccess: () => {
+            queryClient.invalidateQueries(["letsTalks"]); // Ensures the UI updates after mutation
+        },
+    });
+    
+    const handleCall = (id, phone) => {
+        if (phone) {
+            // Open call window
+            window.location.href = `tel:${phone}`;
+    
+            // Wait for 3 seconds, then ask the user for confirmation
+            setTimeout(() => {
+                const userConfirmed = window.confirm("Did you complete the call?");
+                if (userConfirmed) {
+                    mutation.mutate(id);
+                }
+            }, 3000);
+        }
+    };
+    
 
     // const handleCall = (id, phone) => {
     //     if (phone) {
     //         window.location.href = `tel:${phone}`;
 
-           
+
     //         setLetsStalk((prevTalks) =>
     //             prevTalks.map((talk) =>
     //                 talk._id === id ? { ...talk, CallInfo: "done" } : talk
@@ -30,11 +62,12 @@ const CallInfo = () => {
     //         })
     //             .then(res => res.json())
     //             .then(data => {
-    //                 console.log('callinfo patch', data)
+    //                 console.log('callinfo patch deki', data);
+
     //             })
     //     }
     // };
-  
+
 
 
     return (
@@ -62,7 +95,7 @@ const CallInfo = () => {
                                 <td>{letsTalk.phone}</td>
                                 <td>{letsTalk.query}</td>
                                 <td>
-                                    {/* { letsTalk.CallInfo === "done" ? (
+                                    {letsTalk.callInfo === "done" ? (
                                         <FaCheckCircle className="text-accent text-3xl" />
                                     ) : (
                                         <button
@@ -71,9 +104,8 @@ const CallInfo = () => {
                                         >
                                             Call
                                         </button>
-                                    
-                                    )} */}
-                                    call
+                                    )}
+
 
                                 </td>
                             </tr>)

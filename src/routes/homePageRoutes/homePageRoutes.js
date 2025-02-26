@@ -90,7 +90,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/Call',
-                element: <CallInfo></CallInfo>,
+                element: <QueryClientProvider client={queryClient}><CallInfo></CallInfo></QueryClientProvider>,
                 loader: ()=> fetch('http://localhost:5000/dashboard/letstalk')
             },
             {
