@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import './Header.css';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [adminLink, setAdminLink] = useState({});
-  
+  const navigate = useNavigate();
   useEffect(() => {
     if (user && user.email) {
       fetch(`http://localhost:5000/admin/users/${user.email}`)
@@ -27,6 +28,16 @@ const Header = () => {
     logOut()
       .then(() => { })
       .catch(error => console.log(error));
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Log Out",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      
+      navigate('/');
+      
   }
   return (
 

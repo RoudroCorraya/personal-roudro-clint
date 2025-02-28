@@ -7,7 +7,9 @@ import Swal from 'sweetalert2';
 import { QueryClientProvider, useQuery, useQueryClient } from '@tanstack/react-query';
 import { VscRepoFetch } from 'react-icons/vsc';
 const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:5000/users');
+    const res = await axios.get('http://localhost:5000/users', {
+        withCredentials: true
+    });
     return res.data;
 };
 const Users = () => {
@@ -23,7 +25,9 @@ const Users = () => {
      const handleMakeAdnin = (user) =>{
        
         console.log('user info nmakeadmin', user);
-        axios.patch(`http://localhost:5000/user/admin/${user?._id}`)
+        axios.patch(`http://localhost:5000/user/admin/${user?._id}`,{}, {
+            withCredentials: true
+        })
         .then(res => {
             console.log('axios hadnleadmin inside', res.data);
             if(res.data.modifiedCount > 0){

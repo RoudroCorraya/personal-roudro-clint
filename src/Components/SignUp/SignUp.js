@@ -59,7 +59,7 @@ const SignUp = () => {
                 form.reset();
                 Swal.fire({
                     title: 'SignUp Successfully',
-
+                    
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 })

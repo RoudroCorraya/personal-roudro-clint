@@ -1,57 +1,119 @@
-import React from 'react';
-import './HomeSkill.css';
+import React, { useEffect, useState, useRef } from "react";
+import "./HomeSkill.css";
+
+const skills = [
+  { name: "Html", value: 87 },
+  { name: "Css", value: 85 },
+  { name: "Javascript", value: 65 },
+  { name: "React", value: 76 },
+  { name: "Php", value: 60 },
+];
+
+const professionalSkills = [
+  { name: "Communication", value: 80 },
+  { name: "Team Work", value: 76 },
+  { name: "Project Management", value: 85 },
+  { name: "Creativity", value: 70 },
+];
 
 const HomeSkill = () => {
-    return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 my-24'>
-            <div className=''>
-                <h3 className='text-center text-white text-3xl font-semibold mb-14'>Technical Skill</h3>
-                <div className='my-9'>
-                    <p className='text-start mt-2 font-bold text-white'>Html</p>
+  const [animatedProgress, setAnimatedProgress] = useState(
+    skills.map(() => 0)
+  );
+  const [animatedRadial, setAnimatedRadial] = useState(
+    professionalSkills.map(() => 0)
+  );
+  const [isVisible, setIsVisible] = useState(false);
 
-                    <progress className="progress progress-accent w-full" value="87" max="100"></progress>
-                </div>
-                <div className='my-9'>
-                    <p className='text-start mt-2 font-bold text-white'>Css</p>
-                    <progress className="progress progress-accent w-full" value="85" max="100"></progress>
-                </div>
-                <div className='my-9'>
-                    <p className='text-start mt-2 font-bold text-white'>Javascript</p>
-                    <progress className="progress progress-accent w-full" value="65" max="100"></progress>
-                </div>
-                <div className='my-9'>
-                    <p className='text-start mt-2 font-bold text-white'>React</p>
-                    <progress className="progress progress-accent w-full" value="76" max="100"></progress>
-                </div>
-                <div className='my-9'>
-                    <p className='text-start mt-2 font-bold text-white'>Php</p>
-                    <progress className="progress progress-accent w-full" value="60" max="100"></progress>
-                </div>
+  const sectionRef = useRef(null);
 
-            </div>
-            <div>
-                <h3 className='text-center text-white text-3xl font-semibold '>Professional Skill</h3>
-                <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-14'>
-                    <div className='text-center mt-5'>
-                    <div className="radial-progress text-accent" style={{ "--value": "80", "--size": "8rem", "--thickness": "10px" }} role="progressbar"><span className='text-white'>80%</span></div>
-                    <p className='text-center text-white font-semibold mt-5'>Communication</p>
-                    </div>
-                    <div className='text-center mt-5'>
-                    <div className="radial-progress text-accent" style={{ "--value": "76", "--size": "8rem", "--thickness": "10px" }} role="progressbar"><span className='text-white'>76%</span></div>
-                    <p className='text-center text-white font-semibold mt-5'>Team Work</p>
-                    </div>
-                    <div className='text-center mt-5'>
-                    <div className="radial-progress text-accent" style={{ "--value": "85", "--size": "8rem", "--thickness": "10px" }} role="progressbar"><span className='text-white'>85%</span></div>
-                    <p className='text-center text-white font-semibold mt-5'>Project Management</p>
-                    </div>
-                    <div className='text-center mt-5 '>
-                    <div className="radial-progress text-accent" style={{ "--value": "70", "--size": "8rem", "--thickness": "10px" }} role="progressbar"><span className='text-white'>70%</span></div>
-                    <p className='text-center text-white font-semibold mt-5'>Creativity</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  // Observer to detect when section is in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of section is visible
     );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Animate progress bars when section becomes visible
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const interval = setInterval(() => {
+      setAnimatedProgress((prev) =>
+        prev.map((val, i) => (val < skills[i].value ? val + 1 : val))
+      );
+      setAnimatedRadial((prev) =>
+        prev.map((val, i) =>
+          val < professionalSkills[i].value ? val + 1 : val
+        )
+      );
+    }, 20); // Adjust speed
+
+    return () => clearInterval(interval);
+  }, [isVisible]);
+
+  return (
+    <div ref={sectionRef} className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 my-24">
+      {/* Technical Skills */}
+      <div>
+        <h3 className="text-center text-white text-3xl font-semibold mb-14">
+          Technical Skill
+        </h3>
+        {skills.map((skill, index) => (
+          <div key={skill.name} className="my-9">
+            <p className="text-start mt-2 font-bold text-white">{skill.name}</p>
+            <progress
+              className="progress progress-accent w-full"
+              value={animatedProgress[index]}
+              max="100"
+            ></progress>
+          </div>
+        ))}
+      </div>
+
+      {/* Professional Skills */}
+      <div>
+        <h3 className="text-center text-white text-3xl font-semibold">
+          Professional Skill
+        </h3>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-14">
+          {professionalSkills.map((skill, index) => (
+            <div key={skill.name} className="text-center mt-5">
+              <div
+                className="radial-progress text-accent"
+                style={{
+                  "--value": animatedRadial[index],
+                  "--size": "8rem",
+                  "--thickness": "10px",
+                }}
+                role="progressbar"
+              >
+                <span className="text-white">{animatedRadial[index]}%</span>
+              </div>
+              <p className="text-center text-white font-semibold mt-5">
+                {skill.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default HomeSkill;

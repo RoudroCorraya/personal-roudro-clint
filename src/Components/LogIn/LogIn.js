@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
 import './LogIn.css';
 import { AuthContext } from '../../Provider/AuthProvider';
+import axios from 'axios';
 
 const LogIn = () => {
 
@@ -22,14 +23,20 @@ const LogIn = () => {
        
         signIn(email, password)
         .then(result =>{
-            const user = result.user;
-            console.log(user);
+            console.log(result.user.email);
+            const user = {email : email};
+            axios.post('http://localhost:5000/jwt', user,{withCredentials: true})
+            
+            .then(res =>{
+                console.log('jwt token user post axios', res.data);
+            })
+
             
         })
         form.reset();
             Swal.fire({
                 title: 'LoIn Successfully',
-
+                
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
