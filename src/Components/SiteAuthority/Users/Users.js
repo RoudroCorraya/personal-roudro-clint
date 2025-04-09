@@ -6,49 +6,67 @@ import { GrUserAdmin } from "react-icons/gr";
 import Swal from 'sweetalert2';
 import { QueryClientProvider, useQuery, useQueryClient } from '@tanstack/react-query';
 import { VscRepoFetch } from 'react-icons/vsc';
-const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:5000/users', {
-        withCredentials: true
-    });
-    return res.data;
-};
-const Users = () => {
-    
-    // const usersLoded = useLoaderData();
-    // const [users, setUsers] = useState(usersLoded);
-  
-    const { data: users = [], refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: fetchUsers
-    });
-    
-     const handleMakeAdnin = (user) =>{
-       
-        console.log('user info nmakeadmin', user);
-        axios.patch(`http://localhost:5000/user/admin/${user?._id}`,{}, {
-            withCredentials: true
-        })
-        .then(res => {
-            console.log('axios hadnleadmin inside', res.data);
-            if(res.data.modifiedCount > 0){
-                
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${user.name} is admin now`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                  refetch();
-                  
-            }
-        })
-     }
+import useAxiosSecure from '../../../hooks/useAxiosSecure'; 
 
-    console.log('users all data ', users);
+// import UseAxiosSecure from '../../../hooks/UseAxiosSecure';
+// const fetchUsers = async () => {
+//     const res = await axios.get('http://localhost:5000/users', {
+//         withCredentials: true
+//     });
+    
+//     return res.data;
+    
+   
+// };
+
+
+
+
+
+
+
+
+  
+
+  const Users = () => {
+    // const axiosSecure = UseAxiosSecure()
+    const axiosSecure = useAxiosSecure();
+
+    const fetchUsers = async () => {
+        const res = await axiosSecure.get('/users');
+        return res.data;
+    };
+    
+    // Fetch users using React Query
+    const { data: users = [], refetch, isLoading, error } = useQuery({
+        queryKey: ['users'],
+        queryFn: fetchUsers,
+    });
+   
+
+    const handleMakeAdnin = (user) => {
+        console.log('user info make admin', user);
+        axiosSecure.patch(`user/admin/${user?._id}`, {}, {
+            withCredentials: true,
+            
+        })
+            .then(res => {
+                console.log('axios handle admin inside', res.data);
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is admin now`,
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                    refetch();
+                }
+            });
+    }
+
     return (
-        
-            <div>
+        <div>
             <h1>Users: {users.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
@@ -64,30 +82,28 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users?.map((user, index) => <tr key={user._id}>
-                                <th>{index + 1}</th>
-                                <td>{user?.name}</td>
-                                <td>{user?.user?.email}</td>
-                                <td>{user?.user?.lastLoginAt}</td>
-                                <td className=''>
-                                    {
-                                        user.role === 'admin'? <spna className='text-accent'>Admin <GrUserAdmin className='inline-block text-accent text-3xl' /></spna> : <button onClick={()=>handleMakeAdnin(user)} className="btn btn-sm text-white bg-red-500">Make Admin</button>
-                                    }
-                                    
-                                
-                                </td>
-                                
-                            </tr>)
+                            Array.isArray(users) && users.length > 0
+                                ? users.map((user, index) => (
+                                    <tr key={user._id}>
+                                        <th>{index + 1}</th>
+                                        <td>{user?.name}</td>
+                                        <td>{user?.user?.email}</td>
+                                        <td>{user?.user?.lastLoginAt}</td>
+                                        <td>
+                                            {
+                                                user.role === 'admin'
+                                                    ? <span className='text-accent'>Admin <GrUserAdmin className='inline-block text-accent text-3xl' /></span>
+                                                    : <button onClick={() => handleMakeAdnin(user)} className="btn btn-sm text-white bg-red-500">Make Admin</button>
+                                            }
+                                        </td>
+                                    </tr>
+                                ))
+                                : <tr><td colSpan="5">No users found</td></tr>
                         }
-                        
-                       
-                        
                     </tbody>
                 </table>
             </div>
         </div>
-       
-        
     );
 };
 

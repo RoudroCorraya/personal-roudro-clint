@@ -86,7 +86,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/users',
                 element: <QueryClientProvider client={queryClient}><Users></Users></QueryClientProvider>,
-                loader: ()=> fetch('http://localhost:5000/dashboard/users')
+               
             },
             {
                 path: '/dashboard/Call',
