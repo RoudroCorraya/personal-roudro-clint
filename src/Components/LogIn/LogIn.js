@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './LogIn.css';
 import { AuthContext } from '../../Provider/AuthProvider';
 import axios from 'axios';
+import FadeInOnScroll from '../../ScrollEffects/FadeInOnScroll';
 
 const LogIn = () => {
 
@@ -69,7 +70,7 @@ const LogIn = () => {
     return (
         <div className="hero bg-base-200 min-h-screen text-white logInBgSetUp rounded-3xl">
         <div className="hero-content flex-col lg:flex-row overlayLogIn">
-        <div className=" w-1/2
+        <FadeInOnScroll direction='left' className=" w-1/2
                  text-center  lg:text-left" style={{ position: "relative" }}>
                     
                     <img style={{
@@ -78,8 +79,8 @@ const LogIn = () => {
           ...parallaxStyle}} className='signUpImage' src={loginImage} alt=''></img>
                    
                     
-                </div>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                </FadeInOnScroll>
+            <FadeInOnScroll direction='right' className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <h1 className="text-3xl font-bold text-center">LogIn!</h1>
                 <form className="card-body" onSubmit={handleLogin}>
                     <div className="form-control">
@@ -102,7 +103,7 @@ const LogIn = () => {
                         
                     </div>
                 </form>
-            </div>
+            </FadeInOnScroll>
         </div>
     </div>
     );

@@ -10,7 +10,7 @@ const FadeInOnScroll = ({
   duration = 0.8,
   className = "",
 }) => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
 
   // Direction-based variants
   const getInitial = () => {

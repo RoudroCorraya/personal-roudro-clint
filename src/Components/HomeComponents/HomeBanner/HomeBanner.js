@@ -9,6 +9,8 @@ import { PiPhoneCallFill } from 'react-icons/pi';
 import { FaFacebookF, FaLinkedinIn, FaLocationDot, FaSquareTwitter, FaSquareXTwitter, FaXTwitter } from 'react-icons/fa6';
 import { FaFacebook, FaInstagram, FaInstagramSquare, FaLinkedin, FaXingSquare } from 'react-icons/fa';
 import './HomeBanner.css';
+import FadeInOnScroll from '../../../ScrollEffects/FadeInOnScroll';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const HomeBanner = () => {
     // ======================================
@@ -49,7 +51,7 @@ const HomeBanner = () => {
                 <span className='text-white py-1 px-2 bg-info w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div> */}
 
-            <div className=''>
+            <StaggeredFadeIn className=''>
                 <div className=' w-full lg:mx-0 md:mx-auto sm:mx-auto iconCOntrol'>
                     <span className='text-white  py-1 px-2 bg-accent w-28 rounded-tl-xl rounded-tr-xl rounded-br-xl '>Hello I am </span>
                 </div>
@@ -92,8 +94,8 @@ const HomeBanner = () => {
 
                 
                 </div> */}
-            </div>
-            <div className='m-auto'>
+            </StaggeredFadeIn>
+            <FadeInOnScroll direction='right' className='m-auto'>
                 <div className="image">
                     {/* ============================================= */}
                     <div className="outer-div" ref={outerDivRef}>
@@ -101,7 +103,7 @@ const HomeBanner = () => {
                     </div>
                     {/* ============================================= */}
                 </div>
-            </div>
+            </FadeInOnScroll>
 
         </div>
 

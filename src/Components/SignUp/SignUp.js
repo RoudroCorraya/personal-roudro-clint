@@ -8,6 +8,8 @@ import { AuthContext, authContext } from '../../Provider/AuthProvider';
 // import { createContext } from 'react';
 import './SignUp.css';
 import { linkWithCredential } from 'firebase/auth';
+import StaggeredFadeIn from '../../ScrollEffects/StaggeredFadeIn';
+import FadeInOnScroll from '../../ScrollEffects/FadeInOnScroll';
 
 
 const SignUp = () => {
@@ -131,7 +133,7 @@ const SignUp = () => {
 
         <div className="hero bg-base-200 min-h-screen " >
             <div className="hero-content flex-col lg:flex-row backSignUp" >
-                <div className=" w-1/3
+                <FadeInOnScroll direction='left' className=" w-1/3
                  text-center  lg:text-left" style={{ position: "relative" }}>
 
                     <img style={{
@@ -141,8 +143,8 @@ const SignUp = () => {
                     }} className='signUpImage' src={loginImage} alt=''></img>
 
 
-                </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                </FadeInOnScroll>
+                <FadeInOnScroll direction='right' className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-3xl font-bold text-center">Sign Up!</h1>
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
@@ -171,7 +173,7 @@ const SignUp = () => {
                             <span className='text-accent'>already have account?<Link to='/login'>Login</Link></span>
                         </div>
                     </form>
-                </div>
+                </FadeInOnScroll>
             </div>
         </div>
 
