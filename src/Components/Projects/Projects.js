@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ImageModal from "./ProjectImageModal";
 import './Project.css';
 import { useLoaderData } from 'react-router-dom';
+import StaggeredFadeIn from '../../ScrollEffects/StaggeredFadeIn';
 
 const Projects = () => {
     const [selectedValue, setSelectedValue] = useState("webDesign");
@@ -35,7 +36,7 @@ const Projects = () => {
             <img src={selectedProject.Thum_image} alt="Thumbnail" />
             <div className="modal-action">
               <form method="dialog">
-                <button className="btn bg-red-700">
+              <button className="btn bg-red-700">
                   <span className="text-white text-3xl">X</span>
                 </button>
               </form>
@@ -51,7 +52,7 @@ const Projects = () => {
                     <div role="tabpanel" className="tab-content p-10">
 
 
-                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
+                        <StaggeredFadeIn className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
                             {
                                 loadedProjects.map((loadProject) => <div key={loadProject._id} className="card card-compact bg-base-100   m-3 shadow-black shadow-xl drop-shadow-2xl">
                                     <figure className='h-40'>
@@ -88,7 +89,7 @@ const Projects = () => {
 
 
 
-                        </div>
+                        </StaggeredFadeIn>
 
 
 
@@ -98,7 +99,7 @@ const Projects = () => {
                     <div role="tabpanel" className="tab-content p-10">
 
 
-                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <StaggeredFadeIn className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                             {
                                 projects.map(project => <div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
                                     <figure className='h-40'>
@@ -125,7 +126,7 @@ const Projects = () => {
 
 
 
-                        </div>
+                        </StaggeredFadeIn>
 
                         
 
@@ -141,7 +142,7 @@ const Projects = () => {
                         aria-label="Customization"
                     />
                     <div role="tabpanel" className="tab-content p-10">
-                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <StaggeredFadeIn className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
 
                             {
@@ -166,12 +167,12 @@ const Projects = () => {
                             }
 
 
-                        </div>
+                        </StaggeredFadeIn>
                     </div>
 
                     <input onClick={(event) => handleProjects(event.target.value)} type="radio" name="my_tabs_1" value="development" role="tab" className="tab" aria-label="Development" />
                     <div role="tabpanel" className="tab-content p-10">
-                        <div className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <StaggeredFadeIn className="grid product lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
 
                             {
                                 projects.map(project => <div key={project._id} className="card card-compact bg-base-100 lg:w-80 md:w-80 sm:w-80  m-3 shadow-black shadow-xl drop-shadow-2xl">
@@ -195,7 +196,7 @@ const Projects = () => {
                             }
 
 
-                        </div>
+                        </StaggeredFadeIn>
                     </div>
                 </div>
             </div>

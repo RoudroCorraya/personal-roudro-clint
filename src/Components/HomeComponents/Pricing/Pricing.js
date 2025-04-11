@@ -4,12 +4,13 @@ import { FaRegCalendarAlt } from 'react-icons/fa';
 import { FaHourglass, FaToiletPaper } from 'react-icons/fa6';
 import { PiHourglassFill } from 'react-icons/pi';
 import { RiFilePaper2Fill } from 'react-icons/ri';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const Pricing = () => {
     return (
         <div className='my-24'>
             <h3 className='text-3xl font-semibold text-white text-center my-28'>Pricing Table</h3>
-            <div className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
+            <StaggeredFadeIn className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
             <div className='hover:-mt-6 transition-all duration-500'>
             <div className="card bg-base-100 w-80 pricespace rounded-none shadow-black shadow-xl drop-shadow-2xl text-center text-white">
                 <div className="card-body ">
@@ -75,7 +76,7 @@ const Pricing = () => {
                 </div>
             </div></div>
             
-        </div>
+        </StaggeredFadeIn>
         </div>
     );
 };

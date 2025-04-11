@@ -4,6 +4,7 @@ import blog1 from '../../../assets/image/blog/blog1.jpg';
 import blog2 from '../../../assets/image/blog/blog2.jpg';
 import blog3 from '../../../assets/image/blog/blog3.jpg';
 import { Link } from 'react-router-dom';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const HomeBlog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -21,7 +22,7 @@ const HomeBlog = () => {
         <div className=''>
             <h3 className='text-white text-3xl font-semibold text-center my-28'>My latest Blogs</h3>
 
-            <div className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
+            <StaggeredFadeIn className='grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
                 {
                 blogs.map((blog)=><div key={blog._id} className='w-80 my-4 mx-auto hover:-mt-6 transition-all duration-500'>
                 <div className="card card-compact bg-base-100 w-80 shadow-black shadow-xl drop-shadow-2xl text-white">
@@ -43,7 +44,7 @@ const HomeBlog = () => {
                
                 
                 
-            </div>
+            </StaggeredFadeIn>
 
 
         </div>

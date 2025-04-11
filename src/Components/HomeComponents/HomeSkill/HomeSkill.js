@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./HomeSkill.css";
+import FadeInOnScroll from "../../../ScrollEffects/FadeInOnScroll";
 
 const skills = [
   { name: "Html", value: 87 },
@@ -69,7 +70,8 @@ const HomeSkill = () => {
 
   return (
     <div ref={sectionRef} className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 my-24">
-      {/* Technical Skills */}
+      <FadeInOnScroll direction="left">
+        {/* Technical Skills */}
       <div>
         <h3 className="text-center text-white text-3xl font-semibold mb-14">
           Technical Skill
@@ -85,9 +87,11 @@ const HomeSkill = () => {
           </div>
         ))}
       </div>
-
-      {/* Professional Skills */}
-      <div>
+      </FadeInOnScroll>
+      
+ <FadeInOnScroll direction="right" delay={0.2}>
+   {/* Professional Skills */}
+   <div>
         <h3 className="text-center text-white text-3xl font-semibold">
           Professional Skill
         </h3>
@@ -112,6 +116,8 @@ const HomeSkill = () => {
           ))}
         </div>
       </div>
+ </FadeInOnScroll>
+     
     </div>
   );
 };
