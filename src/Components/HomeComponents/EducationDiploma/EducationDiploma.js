@@ -22,9 +22,9 @@ const EducationDiploma = () => {
                 </div>
                 </FadeInOnScroll>
 
-                <FadeInOnScroll direction="right" delay={0.2}>
-                    <div className="carousel carousel-vertical rounded-box h-96 mx-4">
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                <FadeInOnScroll direction="right" delay={0.2} className='mdDevise'>
+                    <div className="carousel carousel-vertical rounded-box caraselControl mx-4">
+                        <div className="carousel-item min-h-[200px] education">
                             <div className='text-white'>
                                 <h3 className='text-xl font-semibold text-white imagecontrol'>Notre Dame University Bangladesh</h3>
                                 <IoPinOutline className='text-4xl text-white education' />
@@ -41,7 +41,7 @@ const EducationDiploma = () => {
 
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
                             <div className='w-40 h-40 mx-4 my-4 setimage'>
                                 <img className='education w-full h-40 ' src={ndc} alt='ndc.jpg' />
                             </div>
@@ -58,7 +58,7 @@ const EducationDiploma = () => {
 
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
                             <div className='text-white'>
                                 <h3 className='text-xl font-semibold text-white imagecontrol'>St. Joseph's High School</h3>
                                 <IoPinOutline className='text-4xl text-white education' />
@@ -74,7 +74,7 @@ const EducationDiploma = () => {
 
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
                             <div className='w-40 h-40 mx-4 my-4 setimage'>
                                 <img className='education w-full h-40 ' src={cit} alt='cit.jpg' />
                             </div>
@@ -90,7 +90,7 @@ const EducationDiploma = () => {
 
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
 
                             <div className='text-white'>
                                 <h3 className='text-xl font-semibold text-white imagecontrol'>Creative IT</h3>
@@ -106,7 +106,7 @@ const EducationDiploma = () => {
                             </div>
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
                             <div className='w-40 h-40 mx-4 my-4 setimage'>
                                 <img className='education w-full h-40 ' src={pro} alt='pro.jpg' />
                             </div>
@@ -122,7 +122,7 @@ const EducationDiploma = () => {
 
 
                         </div>
-                        <div className="carousel-item lg:h-52 md:h-52 sm:h-52 education">
+                        <div className="carousel-item min-h-[200px] education">
 
                             <div className='text-white'>
                                 <h3 className='text-xl font-semibold text-white imagecontrol'>Radiance Bangladesh</h3>

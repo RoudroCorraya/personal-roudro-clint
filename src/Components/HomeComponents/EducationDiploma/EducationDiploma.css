@@ -1,10 +1,39 @@
+.caraselControl {
+    height: 400px; /* Or whatever height you want by default */
+}
+@media only screen and (max-width: 1199px){
+    .caraselControl{
+        height: 470px;
+        
+    }
+    .mdDevise{
+        margin: 30px auto;
+    }
+    .education{
+        
+        margin: 25px 0;
+        
+        
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .caraselControl{
+        height: 420px;
+        
+    }
+}
 @media only screen and (max-width: 768px){
+    .caraselControl{
+        height: 420px;
+    }
     .education{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        text-align: center;
+        text-align: center !important;
         width: 100%;
         margin-left: 0 auto;
+        margin: 25px 0;
         
         
     }
@@ -14,7 +43,17 @@
     }
     .imagecontrol{
         margin-top: 30px !important;
+        text-align: center;
+    }
+    .mdDevise{
+        text-align: center;
     }
 
     
+}
+@media only screen and (max-width: 575px){
+    .caraselControl{
+        height: 450px;
+        
+    }
 }

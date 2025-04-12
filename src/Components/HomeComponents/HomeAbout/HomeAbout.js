@@ -18,16 +18,16 @@ const HomeAbout = () => {
 
                 <div className='text-white'>
                 <ul >
-                    <li className='inline-block px-5 py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
+                    <li className='inline-block w-28 text-center py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
                         <span>Php</span>
                     </li>
-                    <li className='inline-block px-5 py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
+                    <li className='inline-block w-28 text-center py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
                         <span>Html</span>
                     </li>
-                    <li className='inline-block px-5 py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
+                    <li className='inline-block w-28 text-center py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
                         <span>Css</span>
                     </li>
-                    <li className='inline-block px-5 py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
+                    <li className='inline-block w-28 text-center py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
                         <span>React</span>
                     </li>
                     
@@ -35,7 +35,7 @@ const HomeAbout = () => {
                 </div>
                 <div className='text-white'>
                     <ul>
-                    <li className='inline-block px-5 py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
+                    <li className='inline-block w-28 text-center py-3 my-3 mr-6 border-solid outline outline-accent rounded-lg'>
                         <span>Javascript</span>
                     </li>
                     </ul>

@@ -103,7 +103,7 @@ const HomeSkill = () => {
                 style={{
                   "--value": animatedRadial[index],
                   "--size": "8rem",
-                  "--thickness": "10px",
+                  "--thickness": "8px",
                 }}
                 role="progressbar"
               >
