@@ -1,6 +1,6 @@
 import React from 'react';
 import '../HomeAbout/HomeAbout.css';
-import aboutImage from '../../../assets/image/aboutme/aboutme.jpg';
+import aboutImage from '../../../assets/image/aboutme/aboutmelect.jpg';
 import FadeInOnScroll from '../../../ScrollEffects/FadeInOnScroll';
 
 const HomeAbout = () => {
@@ -14,7 +14,7 @@ const HomeAbout = () => {
             <FadeInOnScroll direction="right" delay={0.2}>
             <div className='text-white py-10 iconCOntrol'>
                 <h2 className='text-3xl font-semibold my-3'>About Me</h2>
-                <p className='my-3'>I am Rickson web developer based on Dhaka. I have rich experience in web design building and customaization. Also I am good at </p>
+                <p className='my-3'>I am Roudro web developer based on Dhaka. I have rich experience in web design, building and customaization. Also I am good at </p>
 
                 <div className='text-white'>
                 <ul >

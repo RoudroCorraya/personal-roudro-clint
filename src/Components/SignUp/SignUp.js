@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { json, Link, useNavigate, useNavigation } from 'react-router-dom'
+import { json, Link, useLocation, useNavigate, useNavigation } from 'react-router-dom'
 import loginImage from '../../../src/assets/image/logIn/login13.png';
 import loginImage2 from '../../../src/assets/image/logIn/login1-removebg-preview.png';
 import loginImage3 from '../../../src/assets/image/logIn/login3-removebg-preview.png';
@@ -16,60 +16,101 @@ const SignUp = () => {
 
     const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const Swal = require('sweetalert2')
-    const handleSignUp = event => {
+    const location = useLocation();
+    const from = location.state?.from || '/';
+    
 
+const handleSignUp = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        const user = { name, email, password }
-        console.log('signUp user data ', user);
-
-
-
-
-        createUser(email, password, name)
-
-            .then(result => {
-                const user = result?.user;
-                fetch('http://localhost:5000/users', {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: name, // Ensure inputName has the value
-                        user: user
-                    }),
-                   
-                }, )
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log('created user data',data);
-                    })
-
-                    .catch(error => {
-                        console.error(error);
-                    })
-                //    .catch(error => {
-                //     console.error(error);
-                //    })
-                form.reset();
-                Swal.fire({
-                    title: 'SignUp Successfully',
-                    
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                })
-                navigate('/')
+    createUser(email, password, name)
+        .then(result => {
+            const user = result?.user;
+            // Save user to database
+            fetch('http://localhost:5000/users', {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify({ name, user })
             })
+            .then(res => res.json())
+            .then(data => {
+                console.log('created user data', data);
+            });
+
+            form.reset();
+            Swal.fire({
+                title: 'SignUp Successfully',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            });
+
+            navigate(from, { replace: true });
 
 
-    }
+        }).catch(error => {
+            console.error(error);
+        });
+}
+
+    // const navigate = useNavigate();
+    // const Swal = require('sweetalert2')
+    // const handleSignUp = event => {
+
+
+
+    //     event.preventDefault();
+    //     const form = event.target;
+    //     const name = form.name.value;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+    //     const user = { name, email, password }
+    //     console.log('signUp user data ', user);
+
+
+
+
+    //     createUser(email, password, name)
+
+    //         .then(result => {
+    //             const user = result?.user;
+    //             fetch('http://localhost:5000/users', {
+    //                 method: "POST",
+    //                 headers: {
+    //                     "content-type": "application/json"
+    //                 },
+    //                 body: JSON.stringify({
+    //                     name: name, // Ensure inputName has the value
+    //                     user: user
+    //                 }),
+                   
+    //             }, )
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     console.log('created user data',data);
+    //                 })
+
+    //                 .catch(error => {
+    //                     console.error(error);
+    //                 })
+    //             //    .catch(error => {
+    //             //     console.error(error);
+    //             //    })
+    //             form.reset();
+    //             Swal.fire({
+    //                 title: 'SignUp Successfully',
+                    
+    //                 icon: 'success',
+    //                 confirmButtonText: 'Ok'
+    //             })
+    //             navigate('/')
+    //         })
+
+
+    // }
     // const handleSignUp = async (event) => {
     //     event.preventDefault();
 

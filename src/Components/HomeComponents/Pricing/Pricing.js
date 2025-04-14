@@ -5,6 +5,7 @@ import { FaHourglass, FaToiletPaper } from 'react-icons/fa6';
 import { PiHourglassFill } from 'react-icons/pi';
 import { RiFilePaper2Fill } from 'react-icons/ri';
 import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
     return (
@@ -29,7 +30,7 @@ const Pricing = () => {
                     </ul>
                    
                     <div className="card-actions justify-center">
-                        <button className="btn bg-accent text-white">Hire Now</button>
+                        <Link to='/letstalk'><button className="btn bg-accent text-white">Hire Now</button></Link>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@ const Pricing = () => {
                         <li className='my-2'>Bug Fxing</li>
                     </ul>
                     <div className="card-actions justify-center">
-                        <button className="btn bg-accent text-white">Hire Now</button>
+                    <Link to='/letstalk'><button className="btn bg-accent text-white">Hire Now</button></Link>
                     </div>
                 </div>
             </div></div>
@@ -71,7 +72,7 @@ const Pricing = () => {
                         <li className='my-2'>Bug Fxing</li>
                     </ul>
                     <div className="card-actions justify-center">
-                        <button className="btn bg-accent text-white">Hire Now</button>
+                    <Link to='/letstalk'><button className="btn bg-accent text-white">Hire Now</button></Link>
                     </div>
                 </div>
             </div></div>

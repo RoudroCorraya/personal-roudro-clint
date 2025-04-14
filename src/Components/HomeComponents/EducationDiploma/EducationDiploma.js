@@ -7,7 +7,8 @@ import stJoseps from '../../../assets/image/educationImage/St.Josephs-School-Col
 import cit from '../../../assets/image/educationImage/CITRoundLogo.png';
 import pro from '../../../assets/image/educationImage/company_favicon.png';
 import radiance from '../../../assets/image/educationImage/radiance_roundLogo.png';
-import education from '../../../assets/image/educationImage/edufinal1-removebg-preview.png';
+import education from '../../../assets/image/educationImage/education.png';
+// import education from '../../../assets/image/educationImage/edufinal1-removebg-preview.png';
 import FadeInOnScroll from '../../../ScrollEffects/FadeInOnScroll';
 
 const EducationDiploma = () => {
@@ -16,10 +17,18 @@ const EducationDiploma = () => {
             <div><h3 className='text-3xl font-semibold text-white text-center my-20'>Eduaction and Diplomas</h3></div>
             <div className=' grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 '>
                 <FadeInOnScroll direction="left" >
-                    <div className=' shadow-black shadow-xl drop-shadow-2xl rounded-2xl'>
-                    <img className=' w-full h-full' src={education} alt='eduaction.png' />
+                    <div className=' shadow-black shadow-xl drop-shadow-2xl rounded-2xl flex justify-center items-center  h-[400px] imge_div'>
+                        {/* <img className='w-full h-full ' src={education} alt='eduaction.png' /> */}
 
-                </div>
+                        <img
+                            className="max-h-[500px] ml-44 object-contain imge_Control -mt-24 "
+                            src={education}
+                            alt="education.png"
+                        />
+
+
+
+                    </div>
                 </FadeInOnScroll>
 
                 <FadeInOnScroll direction="right" delay={0.2} className='mdDevise'>

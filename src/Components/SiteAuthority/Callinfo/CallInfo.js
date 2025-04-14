@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { FaCheckCircle } from "react-icons/fa";
 import axios from 'axios';
 import { QueryClientProvider, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 
 const CallInfo = () => {
@@ -71,7 +72,7 @@ const CallInfo = () => {
 
 
     return (
-        <div>
+        <StaggeredFadeIn>
             <h3>call information : {letsTalks.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
@@ -115,7 +116,7 @@ const CallInfo = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </StaggeredFadeIn>
     );
 };
 

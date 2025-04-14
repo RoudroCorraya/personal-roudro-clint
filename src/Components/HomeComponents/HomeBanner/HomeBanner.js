@@ -1,7 +1,7 @@
 // import React from 'react';
 import banner1 from '../../../assets/image/bannerImage/banner1.jpg';
 import banner2 from '../../../assets/image/bannerImage/banner2.png';
-import banner3 from '../../../assets/image/bannerImage/me.jpg';
+import banner3 from '../../../assets/image/bannerImage/profile.jpg';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 import { AiFillInstagram, AiOutlineMail } from "react-icons/ai";
@@ -97,6 +97,7 @@ const HomeBanner = () => {
             </StaggeredFadeIn>
             <FadeInOnScroll direction='right' className='m-auto'>
                 <div className="image">
+                
                     {/* ============================================= */}
                     <div className="outer-div" ref={outerDivRef}>
                         <div className="inner-div" ref={innerDivRef}></div>

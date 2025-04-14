@@ -1,10 +1,12 @@
 import React from 'react';
+import welcome from '../../../assets/image/page404/welcome.jpg';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const DashBoardCart = () => {
     return (
-        <div>
-            <h1>My cart</h1>
-        </div>
+        <StaggeredFadeIn>
+            <img className='mx-auto rounded-xl' src={welcome} alt=''></img>
+        </StaggeredFadeIn>
     );
 };
 

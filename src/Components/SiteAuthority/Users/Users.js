@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { QueryClientProvider, useQuery, useQueryClient } from '@tanstack/react-query';
 import { VscRepoFetch } from 'react-icons/vsc';
 import useAxiosSecure from '../../../hooks/useAxiosSecure'; 
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 // import UseAxiosSecure from '../../../hooks/UseAxiosSecure';
 // const fetchUsers = async () => {
@@ -66,7 +67,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
     }
 
     return (
-        <div>
+        <StaggeredFadeIn>
             <h1>Users: {users.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
@@ -103,7 +104,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
                     </tbody>
                 </table>
             </div>
-        </div>
+        </StaggeredFadeIn>
     );
 };
 

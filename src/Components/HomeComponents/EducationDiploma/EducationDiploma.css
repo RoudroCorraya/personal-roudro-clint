@@ -1,6 +1,15 @@
 .caraselControl {
     height: 400px; /* Or whatever height you want by default */
 }
+.education-image-style {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust as per your layout */
+    object-fit: contain; /* Ensures no stretching */
+    display: block;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 1199px){
     .caraselControl{
         height: 470px;
@@ -55,5 +64,12 @@
     .caraselControl{
         height: 450px;
         
+    }
+    .imge_div{
+        height: 280px;
+        
+    }
+    .imge_Control{
+        margin-top: -57px;
     }
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const Contact = () => {
     const contactLoaded = useLoaderData();
         const [contact, setContact ] = useState(contactLoaded);
     return (
-        <div>
+        <StaggeredFadeIn>
             <h1></h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
@@ -41,7 +42,7 @@ const Contact = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </StaggeredFadeIn>
     );
 };
 

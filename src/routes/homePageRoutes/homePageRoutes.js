@@ -22,6 +22,7 @@ import AddBlog from "../../Components/SiteAuthority/AddBlog/AddBlog";
 import HomeBlogDetails from "../../Components/HomeComponents/HomeBlog/HomeBlogDetails";
 import Contact from "../../Components/SiteAuthority/Contact/Contact";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Page404 from "../../Components/404page/Page404";
 const queryClient = new QueryClient();
 
 
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
                 element: <HomeBlogDetails></HomeBlogDetails>,
                 loader: ({params})=> fetch(`http://localhost:5000/blogs/${params?._id}`)
 
+            },
+            {
+                path: '*',
+                element: <Page404></Page404>
             }
         ]
         

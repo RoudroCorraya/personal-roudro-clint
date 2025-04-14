@@ -11,7 +11,9 @@ if(loading){
 if(user){
     return children;
 }
-    return <Navigate to='/signup' state={loaction?.pathname}></Navigate>;
+return user
+? children
+: <Navigate to="/login" state={{ from: loaction.pathname }} replace />;
 };
 
 export default PrivateRoute;

@@ -1,10 +1,12 @@
 .overbg{
-    background: url(../../../src//assets/image/aboutme/aboutme2.jpg) no-repeat center;
+    background: url(../../../src//assets/image/aboutme/six.jpg) no-repeat center;
     background-size: cover;
+    border: 5px solid #fff;
     
 }
 .overbg2{
-    background: url(../../../src//assets/image/aboutme/about7.jpg) no-repeat center;
+    background: url(../../../src//assets/image/aboutme/aboutmefinal.jpg) no-repeat center;
     background-size: cover;
+    border: 5px solid #fff;
     
 }

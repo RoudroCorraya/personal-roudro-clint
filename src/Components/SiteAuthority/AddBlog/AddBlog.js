@@ -1,4 +1,5 @@
 import React from 'react';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const AddBlog = () => {
     const Swal = require('sweetalert2')
@@ -34,7 +35,7 @@ const AddBlog = () => {
 
     }
     return (
-        <div className='text-white'>
+        <StaggeredFadeIn className='text-white'>
             <h1>Add Projects</h1>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -83,7 +84,7 @@ const AddBlog = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </StaggeredFadeIn>
     );
 };
 

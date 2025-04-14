@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouteLoaderData } from 'react-router-dom';
+import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 
 const AddService = () => {
@@ -36,7 +37,7 @@ const AddService = () => {
 
     }
     return (
-        <div className='text-white'>
+        <StaggeredFadeIn className='text-white'>
             <h1>Add you service</h1>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -76,7 +77,7 @@ const AddService = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </StaggeredFadeIn>
     );
 };
 

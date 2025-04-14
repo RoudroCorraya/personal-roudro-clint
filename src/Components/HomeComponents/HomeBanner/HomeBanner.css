@@ -3,14 +3,16 @@
     height: 300px;
     border-radius: 50%;
     border: 5px solid aqua;
-    background: url(../../../assets/image/bannerImage/supper.webp) no-repeat center;
+    background: url(../../../assets/image/bannerImage/profile.jpg) no-repeat center;
     background-size: cover;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+   
     
 }
+
 
 @media only screen and (max-width: 768px){
     .iconCOntrol{

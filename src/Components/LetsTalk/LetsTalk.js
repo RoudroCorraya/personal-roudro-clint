@@ -6,6 +6,8 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css"; // Import styles
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css"; // Import default styles
+import StaggeredFadeIn from '../../ScrollEffects/StaggeredFadeIn';
+import FadeInOnScroll from '../../ScrollEffects/FadeInOnScroll';
 
 const LetsTalk = () => {
     // const [userQuery, setuserQuery] = useState();
@@ -54,7 +56,7 @@ const LetsTalk = () => {
         <div className='text-white'>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
+                    <FadeInOnScroll direction='right' className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Please tell you sweetable time and date upcoming 2 weeks in the query box</h1>
                         <p className="py-6">
                            Our team will contact you for the appoint confirmation within 2 hours through mail or phone call according to the query box.
@@ -62,8 +64,8 @@ const LetsTalk = () => {
                         </p>
                         
 
-                    </div>
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    </FadeInOnScroll>
+                    <FadeInOnScroll direction='left' className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form onSubmit={handleLetsTalk} className="card-body">
 
                             <div className='contact w-80 mx-auto'>
@@ -86,7 +88,7 @@ const LetsTalk = () => {
                             </div>
 
                         </form>
-                    </div>
+                    </FadeInOnScroll>
                 </div>
             </div>
         </div>
