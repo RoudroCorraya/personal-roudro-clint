@@ -16,28 +16,32 @@ const Header = () => {
         .then(data => {
           console.log('horipod', data.role);
           setAdminLink(data)
-          
+
         })
         .catch(error => console.log('Error fetching user role:', error));
     }
+    else {
+      setAdminLink({});
+    }
+
   }, [user]);
-  
+
 
 
   const handleSignOut = () => {
     logOut()
       .then(() => { })
       .catch(error => console.log(error));
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Log Out",
-        showConfirmButton: false,
-        timer: 1500
-      });
-      
-      navigate('/');
-      
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Log Out",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
+    navigate('/');
+
   }
   return (
 
@@ -81,11 +85,15 @@ const Header = () => {
 
           <li><Link className='hover:bg-accent transition-all duration-500' to='/contact'>Contact</Link></li>
           {
-            adminLink.role === 'admin' &&
-            <li><Link className='hover:bg-accent transition-all duration-500' to='/dashboard/card'>Dashboard</Link></li>
+            adminLink?.role === 'admin' && (
+              <li>
+                <Link className='hover:bg-accent transition-all duration-500' to='/dashboard/card'>Dashboard</Link>
+              </li>
+            )
           }
-            
-         
+
+
+
 
 
 

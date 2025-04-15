@@ -11,7 +11,7 @@ import FadeInOnScroll from '../../ScrollEffects/FadeInOnScroll';
 
 const LetsTalk = () => {
     // const [userQuery, setuserQuery] = useState();
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState('');
 
     const navigate = useNavigate();
     const Swal = require('sweetalert2');
@@ -23,7 +23,7 @@ const LetsTalk = () => {
         const country = form.country.value;
         const phone = form.phone.value;
         const query = form.query.value;
-        const userQuery = { name, country, phone, query }
+        const userQuery = { name, country, phone, query, preferredDate: date }
 
         console.log('cheaking from', userQuery);
         fetch('http://localhost:5000/letstalk', {
@@ -38,6 +38,7 @@ const LetsTalk = () => {
                 console.log('letstalk server Post data', data);
             })
         form.reset();
+        setDate('');
         Swal.fire({
             title: 'Our team will contact you within 2 hours',
 
@@ -59,10 +60,10 @@ const LetsTalk = () => {
                     <FadeInOnScroll direction='right' className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Please tell you sweetable time and date upcoming 2 weeks in the query box</h1>
                         <p className="py-6">
-                           Our team will contact you for the appoint confirmation within 2 hours through mail or phone call according to the query box.
-                           
+                            Our team will contact you for the appoint confirmation within 2 hours through mail or phone call according to the query box.
+
                         </p>
-                        
+
 
                     </FadeInOnScroll>
                     <FadeInOnScroll direction='left' className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -81,6 +82,17 @@ const LetsTalk = () => {
 
                                     <input name='phone' type="text" className="grow" placeholder="Phone" />
                                 </label>
+                                <label className="block my-6">
+                                    <span className="text-sm font-medium text-white mb-1">Preferred Date & Time</span>
+                                    <input
+                                        type="datetime-local"
+                                        value={date}
+                                        onChange={event => setDate(event.target.value)}
+                                        className="input input-bordered w-full"
+                                        required
+                                    />
+                                </label>
+
 
 
                                 <textarea name='query' className="textarea textarea-bordered w-80 h-44" placeholder="Write your query"></textarea>

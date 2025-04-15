@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
 
 const Contact = () => {
@@ -29,8 +29,8 @@ const Contact = () => {
                                 <td>{contact?.phone}</td>
                                 <td>{contact?.query}</td>
                                 <td className=''>
-                                    <button className="btn btn-sm text-white bg-red-500">Gmail</button>
-                                    <button className="btn btn-sm bg-accent text-white">Call</button>
+                                    <Link to='https://mail.google.com/'><button className="btn btn-sm text-white bg-red-500">Gmail</button></Link>
+                                    
                                 
                                 </td>
                                 

@@ -4,6 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import axios from 'axios';
 import { QueryClientProvider, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import StaggeredFadeIn from '../../../ScrollEffects/StaggeredFadeIn';
+import moment from 'moment';
 
 
 const CallInfo = () => {
@@ -25,12 +26,12 @@ const CallInfo = () => {
             queryClient.invalidateQueries(["letsTalks"]); // Ensures the UI updates after mutation
         },
     });
-    
+
     const handleCall = (id, phone) => {
         if (phone) {
             // Open call window
             window.location.href = `tel:${phone}`;
-    
+
             // Wait for 3 seconds, then ask the user for confirmation
             setTimeout(() => {
                 const userConfirmed = window.confirm("Did you complete the call?");
@@ -40,7 +41,7 @@ const CallInfo = () => {
             }, 3000);
         }
     };
-    
+
 
     // const handleCall = (id, phone) => {
     //     if (phone) {
@@ -84,6 +85,7 @@ const CallInfo = () => {
                             <th>Country</th>
                             <th>Phone</th>
                             <th>Query</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -95,6 +97,12 @@ const CallInfo = () => {
                                 <td>{letsTalk.country}</td>
                                 <td>{letsTalk.phone}</td>
                                 <td>{letsTalk.query}</td>
+                                <td className=''>
+                                    {letsTalk.preferredDate
+                                        ? moment(letsTalk.preferredDate).format("MMMM D, YYYY — h:mm A")
+                                        : "Not set"}
+                                </td>
+
                                 <td>
                                     {letsTalk.callInfo === "done" ? (
                                         <FaCheckCircle className="text-accent text-3xl" />

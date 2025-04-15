@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import app from '../firebase/firebase.config';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 
 export const AuthContext = createContext();
@@ -10,6 +11,7 @@ const auth = getAuth(app);
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    
     
     const createUser = (email, password) =>{
         setLoading(true);
@@ -24,7 +26,9 @@ export const AuthProvider = ({children}) => {
         setLoading(true);
         return signOut(auth)
             .then(() => {
+                localStorage.removeItem('access-token'); 
                 setLoading(false);
+                
             })
             .catch(error => {
                 console.error("Logout error:", error);

@@ -66,10 +66,10 @@ const HomeBanner = () => {
                 </div>
                 <div className=' w-full'>
                     <div className=' w-full iconCOntrol'>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaFacebook className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><AiFillInstagram className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaSquareXTwitter className='inline-block' /></Link>
-                        <Link className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaLinkedin className='inline-block' /></Link>
+                        <Link to='https://www.facebook.com/share/164andJDKy/' className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaFacebook className='inline-block' /></Link>
+                        <Link to='https://www.instagram.com/ricksoncorraya?igsh=cDh3ZGlsdmFhZ2U2' className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><AiFillInstagram className='inline-block' /></Link>
+                        <Link to='https://x.com/CRoudro?t=kJwCw-Uf_TJN4HQb0VSM9w&s=09' className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaSquareXTwitter className='inline-block' /></Link>
+                        <Link to='https://www.linkedin.com/in/roudro-corraya-29b2a41b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' className='mx-3 text-4xl text-white hover:text-accent transition-all duration-500'><FaLinkedin className='inline-block' /></Link>
 
                     </div>
 

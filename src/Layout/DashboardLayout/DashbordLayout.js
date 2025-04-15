@@ -26,11 +26,11 @@ const DashbordLayout = () => {
                     <ul>
                         <li className="my-3"><Link to='/dashboard/card'>My DashboardCart</Link></li>
                         <li className="my-3"><Link to='/dashboard/users'>My users</Link></li>
-                        <li className="my-3"><Link to='/dashboard/Call'>Call Info</Link></li>
+                        <li className="my-3"><Link to='/dashboard/Call'>Call List</Link></li>
                         <li className="my-3"><Link to='/dashboard/addservice'>Add service</Link></li>
                         <li className="my-3"><Link to='/dashboard/addproject'>Add project</Link></li>
                         <li className="my-3"><Link to='/dashboard/addblog'>Add Blog</Link></li>
-                        <li className="my-3"><Link to='/dashboard/contact'>Contact Info</Link></li>
+                        <li className="my-3"><Link to='/dashboard/contact'>Contact List</Link></li>
                     </ul>
                 </div>
 
